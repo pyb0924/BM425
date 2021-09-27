@@ -17,7 +17,7 @@
 \newcommand{\enabstractname}{Abstract}
 
 \begin{document}
-\bibliographystyle{plain}
+\bibliographystyle{unsrt}
 \begin{titlepage}
     \begin{center}
         \includegraphics[width=0.8\textwidth]{sjtu-name-blue.pdf}\\[1cm]
@@ -39,7 +39,7 @@
 %正文
 
 \section{开源的概念}
-开源（Open Source)，是一种软件设计开发和分发的模式。在传统的软件发行模式中，开发者会以开放应用接口，编译为动态库等方式，对用户影藏源代码。而开源软件则不同，开源软件的源代码对所有开发者、用户和其他感兴趣的人员开放，在近年来的软件设计和分发中越来越受到开发者的欢迎。开源并不仅仅意味着可以开放访问的源代码，根据Open Source Init拟定的标准，此处将开源软件的理念和特点总结为如下几点\cite{opensourceinit}：
+开源（Open Source），是一种软件设计开发和分发的模式。\cite{enwiki:1043831936}在传统的软件发行模式中，开发者会以开放应用接口，编译为动态库等方式，对用户隐藏源代码。而开源软件则不同，开源软件的源代码对所有开发者、用户和其他感兴趣的人员开放，在近年来的软件设计和分发中越来越受到开发者的欢迎。开源并不仅仅意味着可以开放访问的源代码，根据Open Source Init拟定的标准，此处将开源软件的理念和特点总结为如下几点\cite{opensourceinit}：
 \begin{enumerate}
     \item 免费分发（Free Redistribution）。开源许可不应限制任何一方将软件作为包含来自多个不同来源的程序的聚合软件分发的组件进行销售或赠送。许可证不要求为此类销售支付特许权使用费或其他费用。
     \item 开放源代码（Source Code）。该程序必须包含源代码，并且必须允许以源代码和编译形式分发。如果某种形式的产品不附带源代码，则必须有一种广为人知的方式以不超过合理的复制成本获得源代码，最好是通过互联网免费下载。源代码必须是程序员修改程序的首选形式。不允许故意混淆源代码。不允许使用中间形式，例如预处理器或翻译器的输出。
@@ -110,7 +110,7 @@ Gitee是开源中国（OSChina）推出的基于Git的代码托管服务。
 开源软件用途多样，开源协议也规定了开源软件不得限制其应用领域。在生物医学工程领域，开源软件也得到了广泛的应用。生物医学工程领域的开源软件可按照应用领域大致分为如下几类：
 \subsection{开源PACS/Dicom Server软件}
 \subsubsection{Dicoogle}
-Dicoogle是一个企业级的开源 PACS 系统，它具有模块化结构，配备适合开发人员的 SDK，允许开发人员构建医疗成像服务器就绪应用程序。Dicoogle 拥有强大的存档、索引和查询选项，具有高度扩展性。Dicoogle配备了一组API来构建基于云的DICOM应用程序。Dicoogle的文件包括有关Dicoogle 安装、配置和设置的详细手册，并提供了为 Dicoogle和Web/Cloud应用程序构建插件的全面指南。
+Dicoogle是一个企业级的开源 PACS 系统，它具有模块化结构，配备适合开发人员的SDK，允许开发人员构建医疗成像服务器就绪应用程序\cite{topPACS}。Dicoogle 拥有强大的存档、索引和查询选项，具有高度扩展性。Dicoogle配备了一组API来构建基于云的DICOM应用程序。Dicoogle的文件包括有关Dicoogle 安装、配置和设置的详细手册，并提供了为 Dicoogle和Web/Cloud应用程序构建插件的全面指南。
 
 Dicoogle使用Java和JS开发，可作为Web应用运行，Dicoogle同样基于GPL开源协议。
 
@@ -122,7 +122,7 @@ Dicoogle使用Java和JS开发，可作为Web应用运行，Dicoogle同样基于G
 \end{figure}
 
 \subsubsection{Orthanc}
-Orthanc 是一个开源、模块化、轻量级的 DICOM 服务器项目，由比利时的列日大学医院与2012年9月发起。它配备了丰富的API 和几个插件，支持不同的数据库和DICOM查看者。Orthanc可在Linux、Windows等多平台下运行，执行GPL开源协议。
+Orthanc是一个开源、模块化、轻量级的 DICOM 服务器项目，由比利时的列日大学医院与2012年9月发起\cite{topPACS}。它配备了丰富的API 和几个插件，支持不同的数据库和DICOM查看者。Orthanc可在Linux、Windows等多平台下运行，执行GPL开源协议。
 
 \begin{figure}[H]
     \centering
@@ -134,15 +134,15 @@ Orthanc 是一个开源、模块化、轻量级的 DICOM 服务器项目，由�
 
 \subsection{开源医学图像处理软件}
 \subsubsection{ITK}
-ITK（Insight Segmentation and Registration Toolkit）是一个跨平台、开源的应用程序开发框架，广泛用于图像分割和图像配准程序的开发。ITK 是在NLM的资助下开发的。该工具包提供了两个、三个和更多维度的前沿分割和配准算法。ITK使用CMake构建环境来管理配置过程。该软件是用C++实现的，并为Python包装。SimpleITK是ITK项目的一个分支，以八种编程语言为ITK提供简化的接口，也在积极开发中。
+ITK（Insight Segmentation and Registration Toolkit）是一个跨平台、开源的应用程序开发框架，广泛用于图像分割和图像配准程序的开发\cite{enwiki:1013660206}。ITK 是在NLM的资助下开发的。该工具包提供了两个、三个和更多维度的前沿分割和配准算法。ITK使用CMake构建环境来管理配置过程。该软件是用C++实现的，并为Python包装。SimpleITK是ITK项目的一个分支，以八种编程语言为ITK提供简化的接口，也在积极开发中。
 \subsubsection{pydicom}
 pydicom是一个使用纯Python语言的第三方库，它提供了在Python环境下读取、修改和写入Dicom文件的API。pydicom支持单张Dicom和序列的读取，并可以很容易的将Dicom像素数据转化为Numpy.ndarray格式，极大方便了医学图像处理工作者的进一步处理和可视化。同时pydicom也支持tag解析，和JPEG压缩方式的文件写入。
 
 \subsection{生物信息学开源软件}
 \subsubsection{EMBOSS}
-EMBOSS（The European Molecular Biology Open Software Suite），是专为分子生物学研究用户的需要而开发的免费开源软件分析包。该软件自动处理各种格式的数据，甚至允许从 Web 上透明地检索序列数据。此外，由于提供了广泛的库，这是一个平台，让其他科学家开发和发布软件在真正的开源精神。EMBOSS 还将一系列当前可用的软件包和工具集成到整体中，以便进行序列分析。EMBOSS运行在Linux上，支持序列的信息提取、比对等各种常用功能，同时也提供了Web版。EMBOSS使用的是GPL和LGPL开源协议。
+EMBOSS（The European Molecular Biology Open Software Suite），是专为分子生物学研究用户的需要而开发的免费开源软件分析包\cite{EMBOSS}。该软件自动处理各种格式的数据，甚至允许从 Web 上透明地检索序列数据。此外，由于提供了广泛的库，这是一个平台，让其他科学家开发和发布软件在真正的开源精神。EMBOSS 还将一系列当前可用的软件包和工具集成到整体中，以便进行序列分析。EMBOSS运行在Linux上，支持序列的信息提取、比对等各种常用功能，同时也提供了Web版。EMBOSS使用的是GPL和LGPL开源协议。
 \subsubsection{Bioconductor}
-Bioconductor是一款基于R语言开发的开源软件，可用于高通量的基因组数据。Bioconductor追求的是透明开源、可重复性和高效开发。R语言在统计中本来就占有压倒性的地位，R语言支持面向对象、互联网接口、并行计算、可视化、统计模拟和建模等各类适合处理高通量基因组处理的语言特性，这也为Bioconductor打下了基础，Bioconductor建议同时发表数据和每一步执行的命令，而不是只提供算法，这大大提高了可重复性实验的操作难度。此外，Bioconductor还支持动态的生物注释，可以随着研究的进行更新生物信息的注释。
+Bioconductor是一款基于R语言开发的开源软件，可用于高通量的基因组数据\cite{Bioconductor}。Bioconductor追求的是透明开源、可重复性和高效开发。R语言在统计中本来就占有压倒性的地位，R语言支持面向对象、互联网接口、并行计算、可视化、统计模拟和建模等各类适合处理高通量基因组处理的语言特性，这也为Bioconductor打下了基础，Bioconductor建议同时发表数据和每一步执行的命令，而不是只提供算法，这大大提高了可重复性实验的操作难度。此外，Bioconductor还支持动态的生物注释，可以随着研究的进行更新生物信息的注释。
 
 \section{结果与讨论}
 
