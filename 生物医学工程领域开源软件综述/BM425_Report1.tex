@@ -54,7 +54,7 @@
 \end{enumerate}
 
 \section{开源协议介绍}
-开源协议指的是以上满足开源定义的协议，它们的共同特点是允许软件的免费使用、修改和共享。而根据所需开放程度的不同，提供了不同的开源协议，目前开源协议共有上百种之多。而其中常用的开源协议包括：GPL、LGPL、BSD、MIT、Mozilla和Apache。
+开源协议指的是以上满足开源定义的协议，它们的共同特点是允许软件的免费使用、修改和共享。而根据所需开放程度的不同，提供了不同的开源协议，目前开源协议共有上百种之多。而其中常用的开源协议包括：GPL、LGPL、BSD、MIT、Mozilla和Apache。此处列举如下：\cite{opensourceinit}\cite{runoob}\cite{zhihuOpenSource}
 \subsection{GPL协议}
 GPL协议（GNU General Public License），全称GNU通用公共许可协议。GPL的开源程度在各种协议中最大。GPL的出发点是代码的开源/免费使用和引用/修改/衍生代码的开源/免费使用。GPL协议要求只要软件中包含了遵循 GPL 协议的产品或代码，该软件就必须也遵循 GPL许可协议，也就是必须开源免费，开放所有源代码，因此这个协议并不适合商用软件。
 
@@ -97,8 +97,52 @@ Apache协议要求程序开发人员在开发遵循该协议的软件时，要�
 
 使用Apache协议的软件有TypeScript、MongoDB、tensorflow、OpenCV等。
 \section{常见的代码托管平台}
+\subsection{GitHub}
+GitHub是一个面向开源及私有软件项目的托管平台，因为只支持Git作为唯一的版本库格式进行托管，故名GitHub。是世界上最大的开源代码托管平台，目前属于MicroSoft公司。
+
+\subsection{GitLab}
+GitLab是由GitLabInc.开发，使用MIT许可证的基于网络的Git仓库管理工具，且具有wiki和issue跟踪功能。使用Git作为代码管理工具，并在此基础上搭建起来的web服务。其本身基于MIT协议。
+
+\subsection{Gitee}
+Gitee是开源中国（OSChina）推出的基于Git的代码托管服务。
+
 \section{生物医学工程领域的开源软件}
-\subsection{开源PACS软件}
+开源软件用途多样，开源协议也规定了开源软件不得限制其应用领域。在生物医学工程领域，开源软件也得到了广泛的应用。生物医学工程领域的开源软件可按照应用领域大致分为如下几类：
+\subsection{开源PACS/Dicom Server软件}
+\subsubsection{Dicoogle}
+Dicoogle是一个企业级的开源 PACS 系统，它具有模块化结构，配备适合开发人员的 SDK，允许开发人员构建医疗成像服务器就绪应用程序。Dicoogle 拥有强大的存档、索引和查询选项，具有高度扩展性。Dicoogle配备了一组API来构建基于云的DICOM应用程序。Dicoogle的文件包括有关Dicoogle 安装、配置和设置的详细手册，并提供了为 Dicoogle和Web/Cloud应用程序构建插件的全面指南。
+
+Dicoogle使用Java和JS开发，可作为Web应用运行，Dicoogle同样基于GPL开源协议。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{dicoogle.png}
+    \caption{Dicoogle界面}
+    \label{fig:Dicoogle}
+\end{figure}
+
+\subsubsection{Orthanc}
+Orthanc 是一个开源、模块化、轻量级的 DICOM 服务器项目，由比利时的列日大学医院与2012年9月发起。它配备了丰富的API 和几个插件，支持不同的数据库和DICOM查看者。Orthanc可在Linux、Windows等多平台下运行，执行GPL开源协议。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{orthanc.png}
+    \caption{Orthanc界面}
+    \label{fig:Orthanc}
+\end{figure}
+
+
+\subsection{开源医学图像处理软件}
+\subsubsection{ITK}
+ITK（Insight Segmentation and Registration Toolkit）是一个跨平台、开源的应用程序开发框架，广泛用于图像分割和图像配准程序的开发。ITK 是在NLM的资助下开发的。该工具包提供了两个、三个和更多维度的前沿分割和配准算法。ITK使用CMake构建环境来管理配置过程。该软件是用C++实现的，并为Python包装。SimpleITK是ITK项目的一个分支，以八种编程语言为ITK提供简化的接口，也在积极开发中。
+\subsubsection{pydicom}
+pydicom是一个使用纯Python语言的第三方库，它提供了在Python环境下读取、修改和写入Dicom文件的API。pydicom支持单张Dicom和序列的读取，并可以很容易的将Dicom像素数据转化为Numpy.ndarray格式，极大方便了医学图像处理工作者的进一步处理和可视化。同时pydicom也支持tag解析，和JPEG压缩方式的文件写入。
+
+\subsection{生物信息学开源软件}
+\subsubsection{EMBOSS}
+EMBOSS（The European Molecular Biology Open Software Suite），是专为分子生物学研究用户的需要而开发的免费开源软件分析包。该软件自动处理各种格式的数据，甚至允许从 Web 上透明地检索序列数据。此外，由于提供了广泛的库，这是一个平台，让其他科学家开发和发布软件在真正的开源精神。EMBOSS 还将一系列当前可用的软件包和工具集成到整体中，以便进行序列分析。EMBOSS运行在Linux上，支持序列的信息提取、比对等各种常用功能，同时也提供了Web版。EMBOSS使用的是GPL和LGPL开源协议。
+\subsubsection{Bioconductor}
+Bioconductor是一款基于R语言开发的开源软件，可用于高通量的基因组数据。Bioconductor追求的是透明开源、可重复性和高效开发。R语言在统计中本来就占有压倒性的地位，R语言支持面向对象、互联网接口、并行计算、可视化、统计模拟和建模等各类适合处理高通量基因组处理的语言特性，这也为Bioconductor打下了基础，Bioconductor建议同时发表数据和每一步执行的命令，而不是只提供算法，这大大提高了可重复性实验的操作难度。此外，Bioconductor还支持动态的生物注释，可以随着研究的进行更新生物信息的注释。
 
 \section{结果与讨论}
 
