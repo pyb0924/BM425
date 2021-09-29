@@ -93,7 +93,7 @@ bool readBmpFile(char* filename)
 	int lineByte = (bitMapInfoHeader.biWidth * bitMapInfoHeader.biBitCount / 8 + 3) / 4 * 4; //此处的逻辑是什么？请解释？
 	//! 计算每行像素所占的空间大小，将其调整至4的倍数（BMP格式要求）
 	pData = new unsigned char[bitMapInfoHeader.biHeight * lineByte];	//此处是否有漏洞，如何保护？
-	//! 需要判断申请的空间大小是否为0，或者很大
+	//! 需要判断申请的空间大小是否为0，或者很大，防止恶意修改文件导致内存爆炸
 	memcpy(pData, buffer + bitMapFileHeader.bfOffBits, bitMapInfoHeader.biSizeImage);//此处是否有漏洞，如何保护？
 	//! 需要判断文件是否读取成功或是否达到文件末尾，可以通过fread的返回值来判断
 	return true;
