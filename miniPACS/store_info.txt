@@ -1,0 +1,725 @@
+Requesting Association
+D: setting network send timeout to 60 seconds
+D: setting network receive timeout to 60 seconds
+D: Constructing Associate RQ PDU
+D: PDU Type: Associate Accept, PDU Length: 3995 + 6 bytes PDU header
+D: Only dumping 512 bytes.
+D:   02  00  00  00  0f  9b  00  01  00  00  41  52  43  48  49  56
+D:   45  20  20  20  20  20  20  20  20  20  53  54  4f  52  45  53
+D:   43  55  20  20  20  20  20  20  20  20  00  00  00  00  00  00
+D:   00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+D:   00  00  00  00  00  00  00  00  00  00  10  00  00  15  31  2e
+D:   32  2e  38  34  30  2e  31  30  30  30  38  2e  33  2e  31  2e
+D:   31  2e  31  21  00  00  1b  01  00  00  00  40  00  00  13  31
+D:   2e  32  2e  38  34  30  2e  31  30  30  30  38  2e  31  2e  32
+D:   2e  31  21  00  00  19  03  00  00  00  40  00  00  11  31  2e
+D:   32  2e  38  34  30  2e  31  30  30  30  38  2e  31  2e  32  21
+D:   00  00  1b  05  00  00  00  40  00  00  13  31  2e  32  2e  38
+D:   34  30  2e  31  30  30  30  38  2e  31  2e  32  2e  31  21  00
+D:   00  19  07  00  00  00  40  00  00  11  31  2e  32  2e  38  34
+D:   30  2e  31  30  30  30  38  2e  31  2e  32  21  00  00  1b  09
+D:   00  00  00  40  00  00  13  31  2e  32  2e  38  34  30  2e  31
+D:   30  30  30  38  2e  31  2e  32  2e  31  21  00  00  19  0b  00
+D:   00  00  40  00  00  11  31  2e  32  2e  38  34  30  2e  31  30
+D:   30  30  38  2e  31  2e  32  21  00  00  1b  0d  00  00  00  40
+D:   00  00  13  31  2e  32  2e  38  34  30  2e  31  30  30  30  38
+D:   2e  31  2e  32  2e  31  21  00  00  19  0f  00  00  00  40  00
+D:   00  11  31  2e  32  2e  38  34  30  2e  31  30  30  30  38  2e
+D:   31  2e  32  21  00  00  1b  11  00  00  00  40  00  00  13  31
+D:   2e  32  2e  38  34  30  2e  31  30  30  30  38  2e  31  2e  32
+D:   2e  31  21  00  00  19  13  00  00  00  40  00  00  11  31  2e
+D:   32  2e  38  34  30  2e  31  30  30  30  38  2e  31  2e  32  21
+D:   00  00  1b  15  00  00  00  40  00  00  13  31  2e  32  2e  38
+D:   34  30  2e  31  30  30  30  38  2e  31  2e  32  2e  31  21  00
+D:   00  19  17  00  00  00  40  00  00  11  31  2e  32  2e  38  34
+D:   30  2e  31  30  30  30  38  2e  31  2e  32  21  00  00  1b  19
+D:   00  00  00  40  00  00  13  31  2e  32  2e  38  34  30  2e  31
+D:   30  30  30  38  2e  31  2e  32  2e  31  21  00  00  19  1b  00
+D:   00  00  40  00  00  11  31  2e  32  2e  38  34  30  2e  31  30
+D:
+D: Parsing an A-ASSOCIATE PDU
+D: Transport connection: TCP/IP, unencrypted.
+D: Association Parameters Negotiated:
+D: ====================== BEGIN A-ASSOCIATE-AC =====================
+D: Our Implementation Class UID:      1.2.276.0.7230010.3.0.3.6.6
+D: Our Implementation Version Name:   OFFIS_DCMTK_366
+D: Their Implementation Class UID:    1.2.276.0.7230010.3.0.3.6.6
+D: Their Implementation Version Name: OFFIS_DCMTK_366
+D: Application Context Name:    1.2.840.10008.3.1.1.1
+D: Calling Application Name:    STORESCU
+D: Called Application Name:     ARCHIVE
+D: Responding Application Name: ARCHIVE
+D: Our Max PDU Receive Size:    16384
+D: Their Max PDU Receive Size:  16384
+D: Presentation Contexts:
+D:   Context ID:        1 (Accepted)
+D:     Abstract Syntax: =AmbulatoryECGWaveformStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        3 (Accepted)
+D:     Abstract Syntax: =AmbulatoryECGWaveformStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        5 (Accepted)
+D:     Abstract Syntax: =BasicTextSRStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        7 (Accepted)
+D:     Abstract Syntax: =BasicTextSRStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        9 (Accepted)
+D:     Abstract Syntax: =BasicVoiceAudioWaveformStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        11 (Accepted)
+D:     Abstract Syntax: =BasicVoiceAudioWaveformStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        13 (Accepted)
+D:     Abstract Syntax: =BlendingSoftcopyPresentationStateStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        15 (Accepted)
+D:     Abstract Syntax: =BlendingSoftcopyPresentationStateStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        17 (Accepted)
+D:     Abstract Syntax: =CardiacElectrophysiologyWaveformStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        19 (Accepted)
+D:     Abstract Syntax: =CardiacElectrophysiologyWaveformStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        21 (Accepted)
+D:     Abstract Syntax: =ChestCADSRStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        23 (Accepted)
+D:     Abstract Syntax: =ChestCADSRStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        25 (Accepted)
+D:     Abstract Syntax: =ColonCADSRStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        27 (Accepted)
+D:     Abstract Syntax: =ColonCADSRStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        29 (Accepted)
+D:     Abstract Syntax: =ColorSoftcopyPresentationStateStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        31 (Accepted)
+D:     Abstract Syntax: =ColorSoftcopyPresentationStateStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        33 (Accepted)
+D:     Abstract Syntax: =ComprehensiveSRStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        35 (Accepted)
+D:     Abstract Syntax: =ComprehensiveSRStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        37 (Accepted)
+D:     Abstract Syntax: =ComputedRadiographyImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        39 (Accepted)
+D:     Abstract Syntax: =ComputedRadiographyImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        41 (Accepted)
+D:     Abstract Syntax: =CTImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        43 (Accepted)
+D:     Abstract Syntax: =CTImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        45 (Accepted)
+D:     Abstract Syntax: =DigitalIntraOralXRayImageStorageForPresentation
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        47 (Accepted)
+D:     Abstract Syntax: =DigitalIntraOralXRayImageStorageForPresentation
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        49 (Accepted)
+D:     Abstract Syntax: =DigitalIntraOralXRayImageStorageForProcessing
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        51 (Accepted)
+D:     Abstract Syntax: =DigitalIntraOralXRayImageStorageForProcessing
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        53 (Accepted)
+D:     Abstract Syntax: =DigitalMammographyXRayImageStorageForPresentation
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        55 (Accepted)
+D:     Abstract Syntax: =DigitalMammographyXRayImageStorageForPresentation
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        57 (Accepted)
+D:     Abstract Syntax: =DigitalMammographyXRayImageStorageForProcessing
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        59 (Accepted)
+D:     Abstract Syntax: =DigitalMammographyXRayImageStorageForProcessing
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        61 (Accepted)
+D:     Abstract Syntax: =DigitalXRayImageStorageForPresentation
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        63 (Accepted)
+D:     Abstract Syntax: =DigitalXRayImageStorageForPresentation
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        65 (Accepted)
+D:     Abstract Syntax: =DigitalXRayImageStorageForProcessing
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        67 (Accepted)
+D:     Abstract Syntax: =DigitalXRayImageStorageForProcessing
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        69 (Accepted)
+D:     Abstract Syntax: =EncapsulatedPDFStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        71 (Accepted)
+D:     Abstract Syntax: =EncapsulatedPDFStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        73 (Accepted)
+D:     Abstract Syntax: =EnhancedCTImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        75 (Accepted)
+D:     Abstract Syntax: =EnhancedCTImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        77 (Accepted)
+D:     Abstract Syntax: =EnhancedMRImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        79 (Accepted)
+D:     Abstract Syntax: =EnhancedMRImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        81 (Accepted)
+D:     Abstract Syntax: =EnhancedSRStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        83 (Accepted)
+D:     Abstract Syntax: =EnhancedSRStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        85 (Accepted)
+D:     Abstract Syntax: =EnhancedXAImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        87 (Accepted)
+D:     Abstract Syntax: =EnhancedXAImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        89 (Accepted)
+D:     Abstract Syntax: =EnhancedXRFImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        91 (Accepted)
+D:     Abstract Syntax: =EnhancedXRFImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        93 (Accepted)
+D:     Abstract Syntax: =GeneralECGWaveformStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        95 (Accepted)
+D:     Abstract Syntax: =GeneralECGWaveformStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        97 (Accepted)
+D:     Abstract Syntax: =GrayscaleSoftcopyPresentationStateStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        99 (Accepted)
+D:     Abstract Syntax: =GrayscaleSoftcopyPresentationStateStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        101 (Accepted)
+D:     Abstract Syntax: =HemodynamicWaveformStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        103 (Accepted)
+D:     Abstract Syntax: =HemodynamicWaveformStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        105 (Accepted)
+D:     Abstract Syntax: =KeyObjectSelectionDocumentStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        107 (Accepted)
+D:     Abstract Syntax: =KeyObjectSelectionDocumentStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        109 (Accepted)
+D:     Abstract Syntax: =MammographyCADSRStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        111 (Accepted)
+D:     Abstract Syntax: =MammographyCADSRStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        113 (Accepted)
+D:     Abstract Syntax: =MRImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        115 (Accepted)
+D:     Abstract Syntax: =MRImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        117 (Accepted)
+D:     Abstract Syntax: =MRSpectroscopyStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        119 (Accepted)
+D:     Abstract Syntax: =MRSpectroscopyStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        121 (Accepted)
+D:     Abstract Syntax: =MultiframeGrayscaleByteSecondaryCaptureImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        123 (Accepted)
+D:     Abstract Syntax: =MultiframeGrayscaleByteSecondaryCaptureImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        125 (Accepted)
+D:     Abstract Syntax: =MultiframeGrayscaleWordSecondaryCaptureImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        127 (Accepted)
+D:     Abstract Syntax: =MultiframeGrayscaleWordSecondaryCaptureImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        129 (Accepted)
+D:     Abstract Syntax: =MultiframeSingleBitSecondaryCaptureImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        131 (Accepted)
+D:     Abstract Syntax: =MultiframeSingleBitSecondaryCaptureImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        133 (Accepted)
+D:     Abstract Syntax: =MultiframeTrueColorSecondaryCaptureImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        135 (Accepted)
+D:     Abstract Syntax: =MultiframeTrueColorSecondaryCaptureImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        137 (Accepted)
+D:     Abstract Syntax: =NuclearMedicineImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        139 (Accepted)
+D:     Abstract Syntax: =NuclearMedicineImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        141 (Accepted)
+D:     Abstract Syntax: =OphthalmicPhotography16BitImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        143 (Accepted)
+D:     Abstract Syntax: =OphthalmicPhotography16BitImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        145 (Accepted)
+D:     Abstract Syntax: =OphthalmicPhotography8BitImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        147 (Accepted)
+D:     Abstract Syntax: =OphthalmicPhotography8BitImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        149 (Accepted)
+D:     Abstract Syntax: =OphthalmicTomographyImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        151 (Accepted)
+D:     Abstract Syntax: =OphthalmicTomographyImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        153 (Accepted)
+D:     Abstract Syntax: =PositronEmissionTomographyImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        155 (Accepted)
+D:     Abstract Syntax: =PositronEmissionTomographyImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        157 (Accepted)
+D:     Abstract Syntax: =ProcedureLogStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        159 (Accepted)
+D:     Abstract Syntax: =ProcedureLogStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        161 (Accepted)
+D:     Abstract Syntax: =PseudoColorSoftcopyPresentationStateStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        163 (Accepted)
+D:     Abstract Syntax: =PseudoColorSoftcopyPresentationStateStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        165 (Accepted)
+D:     Abstract Syntax: =RawDataStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        167 (Accepted)
+D:     Abstract Syntax: =RawDataStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        169 (Accepted)
+D:     Abstract Syntax: =RealWorldValueMappingStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        171 (Accepted)
+D:     Abstract Syntax: =RealWorldValueMappingStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        173 (Accepted)
+D:     Abstract Syntax: =RTBeamsTreatmentRecordStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        175 (Accepted)
+D:     Abstract Syntax: =RTBeamsTreatmentRecordStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        177 (Accepted)
+D:     Abstract Syntax: =RTBrachyTreatmentRecordStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        179 (Accepted)
+D:     Abstract Syntax: =RTBrachyTreatmentRecordStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        181 (Accepted)
+D:     Abstract Syntax: =RTDoseStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        183 (Accepted)
+D:     Abstract Syntax: =RTDoseStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        185 (Accepted)
+D:     Abstract Syntax: =RTImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        187 (Accepted)
+D:     Abstract Syntax: =RTImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        189 (Accepted)
+D:     Abstract Syntax: =RTPlanStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        191 (Accepted)
+D:     Abstract Syntax: =RTPlanStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        193 (Accepted)
+D:     Abstract Syntax: =RTStructureSetStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        195 (Accepted)
+D:     Abstract Syntax: =RTStructureSetStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        197 (Accepted)
+D:     Abstract Syntax: =RTTreatmentSummaryRecordStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        199 (Accepted)
+D:     Abstract Syntax: =RTTreatmentSummaryRecordStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        201 (Accepted)
+D:     Abstract Syntax: =SecondaryCaptureImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        203 (Accepted)
+D:     Abstract Syntax: =SecondaryCaptureImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        205 (Accepted)
+D:     Abstract Syntax: =SpatialFiducialsStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        207 (Accepted)
+D:     Abstract Syntax: =SpatialFiducialsStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        209 (Accepted)
+D:     Abstract Syntax: =SpatialRegistrationStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        211 (Accepted)
+D:     Abstract Syntax: =SpatialRegistrationStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        213 (Accepted)
+D:     Abstract Syntax: =StereometricRelationshipStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        215 (Accepted)
+D:     Abstract Syntax: =StereometricRelationshipStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        217 (Accepted)
+D:     Abstract Syntax: =TwelveLeadECGWaveformStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        219 (Accepted)
+D:     Abstract Syntax: =TwelveLeadECGWaveformStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        221 (Accepted)
+D:     Abstract Syntax: =UltrasoundImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        223 (Accepted)
+D:     Abstract Syntax: =UltrasoundImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        225 (Accepted)
+D:     Abstract Syntax: =UltrasoundMultiframeImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        227 (Accepted)
+D:     Abstract Syntax: =UltrasoundMultiframeImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        229 (Accepted)
+D:     Abstract Syntax: =VLEndoscopicImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        231 (Accepted)
+D:     Abstract Syntax: =VLEndoscopicImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        233 (Accepted)
+D:     Abstract Syntax: =VLMicroscopicImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        235 (Accepted)
+D:     Abstract Syntax: =VLMicroscopicImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        237 (Accepted)
+D:     Abstract Syntax: =VLPhotographicImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        239 (Accepted)
+D:     Abstract Syntax: =VLPhotographicImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        241 (Accepted)
+D:     Abstract Syntax: =VLSlideCoordinatesMicroscopicImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        243 (Accepted)
+D:     Abstract Syntax: =VLSlideCoordinatesMicroscopicImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        245 (Accepted)
+D:     Abstract Syntax: =XRayAngiographicImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        247 (Accepted)
+D:     Abstract Syntax: =XRayAngiographicImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        249 (Accepted)
+D:     Abstract Syntax: =XRayRadiationDoseSRStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        251 (Accepted)
+D:     Abstract Syntax: =XRayRadiationDoseSRStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D:   Context ID:        253 (Accepted)
+D:     Abstract Syntax: =XRayRadiofluoroscopicImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianExplicit
+D:   Context ID:        255 (Accepted)
+D:     Abstract Syntax: =XRayRadiofluoroscopicImageStorage
+D:     Proposed SCP/SCU Role: Default
+D:     Accepted SCP/SCU Role: Default
+D:     Accepted Transfer Syntax: =LittleEndianImplicit
+D: Requested Extended Negotiation: none
+D: Accepted Extended Negotiation:  none
+D: Requested User Identity Negotiation: none
+D: User Identity Negotiation Response:  none
+D: ======================= END A-ASSOCIATE-AC ======================
+I: Association Accepted (Max Send PDV: 16372)
+I: Sending file: E:\BM425\miniPACS\test.dcm
+D: DcmMetaInfo::checkAndReadPreamble() TransferSyntax="Little Endian Explicit"
+D: DcmDataset::read() TransferSyntax="Little Endian Explicit"
+I: Converting transfer syntax: Little Endian Explicit -> Little Endian Explicit
+I: Sending Store Request (MsgID 1, MR)
+D: ===================== OUTGOING DIMSE MESSAGE ====================
+D: Message Type                  : C-STORE RQ
+D: Message ID                    : 1
+D: Affected SOP Class UID        : MRImageStorage
+D: Affected SOP Instance UID     : 1.2.156.112605.189250953901957.210831081543.4.10712.144023
+D: Data Set                      : present
+D: Priority                      : medium
+D: ======================= END DIMSE MESSAGE =======================
+D: DcmDataset::read() TransferSyntax="Little Endian Implicit"
+I: Received Store Response
+D: ===================== INCOMING DIMSE MESSAGE ====================
+D: Message Type                  : C-STORE RSP
+D: Presentation Context ID       : 113
+D: Message ID Being Responded To : 1
+D: Affected SOP Class UID        : MRImageStorage
+D: Affected SOP Instance UID     : 1.2.156.112605.189250953901957.210831081543.4.10712.144023
+D: Data Set                      : none
+D: DIMSE Status                  : 0x0000: Success
+D: ======================= END DIMSE MESSAGE =======================
+I: Releasing Association
