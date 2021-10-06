@@ -1,1 +1,0 @@
-"D:\Program Files\Orthanc Server\Orthanc" .\server_config.json --verbose
