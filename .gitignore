@@ -5,6 +5,7 @@
 data/
 submit/
 OrthancStorage/
+WebViewerCache/
 # User-specific files
 *.rsuser
 *.suo

@@ -2,5 +2,6 @@
   "Name": "My archive",
   "HttpPort": 4200,
   "DicomAet": "ARCHIVE",
-  "DicomPort": 104
+  "DicomPort": 104,
+  "Plugins" : [ "D:\\Program Files\\Orthanc Server\\Plugins" ]
 }
