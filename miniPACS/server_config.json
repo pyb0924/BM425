@@ -1,7 +1,12 @@
 {
-  "Name": "My archive",
-  "HttpPort": 4200,
-  "DicomAet": "ARCHIVE",
+  "Name": "My Server",
+  "HttpPort": 8000,
+  "DicomAet": "SERVER",
   "DicomPort": 104,
-  "Plugins" : [ "D:\\Program Files\\Orthanc Server\\Plugins" ]
+  "RemoteAccessAllowed" : true,
+  "DicomModalities" : {
+    "local" : [ "FINDSCU", "127.0.0.1", 2000 ],
+    "local2" :[ "MOVESCU", "127.0.0.1", 2000 ],
+    "archive": [ "ARCHIVE", "127.0.0.1", 4242 ]   
+  }
 }

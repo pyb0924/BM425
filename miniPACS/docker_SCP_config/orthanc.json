@@ -1,0 +1,8 @@
+{
+    "Name" : "Archive",
+    "RemoteAccessAllowed" : true,
+    "DicomAet": "ARCHIVE",
+    "DicomModalities" : {
+        "server" : ["SERVER","127.0.0.1",104]
+    }
+}

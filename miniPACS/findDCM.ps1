@@ -1,0 +1,1 @@
+findscu.exe -d -P localhost 104 -k QueryRetrieveLevel=Patient -k PatientID=PID-20210831-161031-1377 > ./log/cfind_scu.log
