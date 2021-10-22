@@ -78,8 +78,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\dcmtk\include;D:\dcmtk\dcmtk-3.6.6-win64-support-MD-iconv-msvc-15.8\zlib-1.2.11\include;D:\dcmtk\dcmtk-3.6.6-win64-support-MD-iconv-msvc-15.8\openssl-1.1.1i\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\dcmtk\dcmtk-3.6.6-win64-support-MD-iconv-msvc-15.8\zlib-1.2.11\lib;D:\dcmtk\dcmtk-3.6.6-win64-support-MD-iconv-msvc-15.8\openssl-1.1.1i\lib;D:\dcmtk\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\dcmtk\include;D:\dcmtk\dcmtk-3.6.6-win64-support-MD-iconv-msvc-15.8\zlib-1.2.11\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\dcmtk\dcmtk-3.6.6-win64-support-MD-iconv-msvc-15.8\zlib-1.2.11\lib;D:\dcmtk\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
