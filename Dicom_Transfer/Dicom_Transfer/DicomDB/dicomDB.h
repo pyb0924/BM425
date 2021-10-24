@@ -28,6 +28,6 @@ void GetSeriesIndexInfo(std::string dcmPath, SeriesIndexInfo& seriesIndexInfo);
 
 void GetSeriesInstanceInfo(std::string dcmPath, SeriesInstanceInfo& seriesInstanceInfo);
 
-Table CreateTableFromSQL(Session& session, const string& schemaName, const string& tableName, string& createSQL);
+Table CreateTableFromSQL(Session& session, const string& schemaName, const string& tableName, string createSQL);
 
 #endif

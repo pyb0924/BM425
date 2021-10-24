@@ -30,5 +30,8 @@
     <ClInclude Include="dicomDB.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="dbConstant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

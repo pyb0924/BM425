@@ -62,23 +62,22 @@ void GetSeriesInstanceInfo(std::string dcmPath, SeriesInstanceInfo& seriesInstan
 	{
 		seriesInstanceInfo.SOPInstanceUID = std::string(stringBuffer.c_str());
 	}
-	if (datasetPtr->findAndGetOFString(DCM_ImagePositionPatient, stringBuffer).good())
+	if (datasetPtr->findAndGetOFStringArray(DCM_ImagePositionPatient, stringBuffer).good())
 	{
 		seriesInstanceInfo.imagePositionPatient = std::string(stringBuffer.c_str());
 	}
-	if (datasetPtr->findAndGetOFString(DCM_ImageOrientationPatient, stringBuffer).good())
+	if (datasetPtr->findAndGetOFStringArray(DCM_ImageOrientationPatient, stringBuffer).good())
 	{
 		seriesInstanceInfo.imageOrientationPatient = std::string(stringBuffer.c_str());
 	}
 }
 
 
-Table CreateTableFromSQL(Session& session, const string& schemaName,const string& tableName, string& createSQL)
+Table CreateTableFromSQL(Session& session, const string& schemaName, const string& tableName, string createSQL)
 {
-	string quotedName = string("`")+ schemaName + string("`.`") + tableName + string("`");
-	session.sql(string("DROP TABLE IF EXISTS ") + quotedName).execute();
+	session.sql(string("USE ") + schemaName).execute();
+	session.sql(string("DROP TABLE IF EXISTS ") + tableName).execute();
 	createSQL.insert(13, tableName);
-	//TODO correct SQL batch
 	session.sql(createSQL).execute();
 	return session.getSchema(schemaName).getTable(tableName);
 }

@@ -8,62 +8,41 @@
 #include <dcmtk/dcmdata/dcfilefo.h>
 #include <dcmtk/dcmdata/dcdeftag.h>
 
+#include "dbConstant.h"
 #include "dicomDB.h"
 
-using namespace ::mysqlx;
+using namespace mysqlx;
 using namespace boost::filesystem;
-
-string createIndexTableSQL = "CREATE TABLE (\
-patientName VARCHAR(64) NOT NULL,\
-patientID VARCHAR(64) NOT NULL,\
-studyID VARCHAR(16) NOT NULL,\
-studyInstanceUID VARCHAR(64) NOT NULL,\
-seriesDescription VARCHAR(64) NOT NULL,\
-seriesInstanceUID VARCHAR(64) NOT NULL UNIQUE,\
-seriesNumber SMALLINT NOT NULL,\
-PRIMARY KEY(seriesInstanceUID));";
-
-string createInstanceTableSQL = "CREATE TABLE (\
-SOPInstanceUID VARCHAR(64) NOT NULL UNIQUE,\
-imagePosition VARCHAR(16) NOT NULL,\
-PRIMARY KEY(seriesInstanceUID))";
-
-string seriesIndexStr = "seriesIndex";
-string schemaName = string("test");
-std::string sPath = "E:\\BM425\\data";
 
 int main(int argc, const char* argv[])
 {
 	// Connect to MySQL Server and create table
-	
-	//string url = "mysqlx://localhost:33060/test?user=pyb0924&password=peter2000";
-	//Session session(url);
-	Session session("localhost", 33060, "pyb0924", "peter2000");
-	session.createSchema(schemaName, true);
-	Table seriesIndexTable = CreateTableFromSQL(session, schemaName, seriesIndexStr,createIndexTableSQL);
+	Session session(host, port, username, password);
+	Table seriesIndexTable = CreateTableFromSQL(session, schemaName, seriesIndexStr, createIndexTableSQL);
 	assert(seriesIndexTable.existsInDatabase());
-	
-	path pPath(sPath);
-	directory_iterator endIter;
-	std::string dcmPath;
+
+	path pPath(dataPath);
 	SeriesIndexInfo indexInfo;
 	SeriesInstanceInfo instanceInfo;
+
+	directory_iterator endIter;
 	bool isFirstFile = true;
+	std::string dcmPath;
 	std::string seriesName;
 
 	for (directory_iterator iter(pPath); iter != endIter; iter++)
 	{
 		isFirstFile = true;
 		path seriesPath(iter->path().string());
-		std::cout << "Dealing with Series [" << iter->path().filename().string() << "]"<<std::endl;
+		std::cout << "Dealing with Series [" << iter->path().filename().string() << "]" << std::endl;
 		seriesName = iter->path().filename().string();
-		Table seriesInstanceTable = CreateTableFromSQL(session, schemaName,seriesName, createInstanceTableSQL);
+		Table seriesInstanceTable = CreateTableFromSQL(session, schemaName, seriesName, createInstanceTableSQL);
 		assert(seriesInstanceTable.existsInDatabase());
 
 		for (directory_iterator seriesIter(seriesPath); seriesIter != endIter; seriesIter++)
 		{
 			dcmPath = seriesIter->path().string();
-			// First file: add record to seriesIndex table
+			// First file: add series index
 			if (isFirstFile)
 			{
 				GetSeriesIndexInfo(dcmPath, indexInfo);
@@ -76,10 +55,12 @@ int main(int argc, const char* argv[])
 				isFirstFile = false;
 				std::cout << "Series [" << iter->path().filename().string() << "] Index Inserted." << std::endl;
 			}
-			// All: add record to seriesInstance table
+			// All file: add instance in series
 			GetSeriesInstanceInfo(dcmPath, instanceInfo);
-			seriesInstanceTable.insert("SOPInstanceUID", "imagePositionPatient", "imageOrientationPatient")
-				.values(instanceInfo.SOPInstanceUID, instanceInfo.imagePositionPatient, instanceInfo.imageOrientationPatient)
+			seriesInstanceTable
+				.insert("SOPInstanceUID", "imagePositionPatient", "imageOrientationPatient","localFilePath")
+				.values(instanceInfo.SOPInstanceUID, instanceInfo.imagePositionPatient, 
+					instanceInfo.imageOrientationPatient,dcmPath)
 				.execute();
 			std::cout << "Instance [" << seriesIter->path().filename().string() << "] Info Inserted." << std::endl;
 		}
