@@ -17,7 +17,7 @@ static string seriesIndexStr = "series_index";
 static std::string dataPath = "E:\\BM425\\data";
 
 //SQL string
-static string createIndexTableSQL = "CREATE TABLE (\
+static string createIndexTableSQL = "CREATE TABLE %s (\
 patientName VARCHAR(64) NOT NULL,\
 patientID VARCHAR(64) NOT NULL,\
 studyID VARCHAR(16) NOT NULL,\
@@ -27,7 +27,7 @@ seriesInstanceUID VARCHAR(64) NOT NULL UNIQUE,\
 seriesNumber SMALLINT NOT NULL,\
 PRIMARY KEY(seriesInstanceUID));";
 
-static string createInstanceTableSQL = "CREATE TABLE (\
+static string createInstanceTableSQL = "CREATE TABLE %s (\
 SOPInstanceUID VARCHAR(64) NOT NULL UNIQUE,\
 imagePositionPatient VARCHAR(64) NOT NULL,\
 imageOrientationPatient VARCHAR(16) NOT NULL,\

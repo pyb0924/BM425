@@ -58,9 +58,9 @@ int main(int argc, const char* argv[])
 			// All file: add instance in series
 			GetSeriesInstanceInfo(dcmPath, instanceInfo);
 			seriesInstanceTable
-				.insert("SOPInstanceUID", "imagePositionPatient", "imageOrientationPatient","localFilePath")
-				.values(instanceInfo.SOPInstanceUID, instanceInfo.imagePositionPatient, 
-					instanceInfo.imageOrientationPatient,dcmPath)
+				.insert("SOPInstanceUID", "imagePositionPatient", "imageOrientationPatient", "localFilePath")
+				.values(instanceInfo.SOPInstanceUID, instanceInfo.imagePositionPatient,
+					instanceInfo.imageOrientationPatient, dcmPath)
 				.execute();
 			std::cout << "Instance [" << seriesIter->path().filename().string() << "] Info Inserted." << std::endl;
 		}

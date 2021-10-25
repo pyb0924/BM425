@@ -1,3 +1,4 @@
+#include <boost/format.hpp>
 #include <dcmtk/dcmdata/dcfilefo.h>
 #include <dcmtk/dcmdata/dcdeftag.h>
 
@@ -77,7 +78,7 @@ Table CreateTableFromSQL(Session& session, const string& schemaName, const strin
 {
 	session.sql(string("USE ") + schemaName).execute();
 	session.sql(string("DROP TABLE IF EXISTS ") + tableName).execute();
-	createSQL.insert(13, tableName);
-	session.sql(createSQL).execute();
+	string createSQLWithName = boost::str(boost::format(createSQL) % tableName);
+	session.sql(createSQLWithName).execute();
 	return session.getSchema(schemaName).getTable(tableName);
 }
