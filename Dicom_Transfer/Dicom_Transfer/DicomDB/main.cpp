@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fstream>
-#include <assert.h>
+#include <cassert>
 
 #include <boost/filesystem.hpp>
 #include <mysqlx/xdevapi.h>
@@ -48,9 +48,9 @@ int main(int argc, const char* argv[])
 				GetSeriesIndexInfo(dcmPath, indexInfo);
 				seriesIndexTable
 					.insert("patientName", "patientID", "studyID", "studyInstanceUID",
-						"seriesDescription", "seriesInstanceUID", "seriesNumber")
+					        "seriesDescription", "seriesInstanceUID", "seriesNumber")
 					.values(indexInfo.patientName, indexInfo.patientID, indexInfo.studyID, indexInfo.studyInstanceUID,
-						indexInfo.seriesDescription, indexInfo.seriesInstanceUID, indexInfo.seriesNumber)
+					        indexInfo.seriesDescription, indexInfo.seriesInstanceUID, indexInfo.seriesNumber)
 					.execute();
 				isFirstFile = false;
 				std::cout << "Series [" << iter->path().filename().string() << "] Index Inserted." << std::endl;
@@ -60,7 +60,7 @@ int main(int argc, const char* argv[])
 			seriesInstanceTable
 				.insert("SOPInstanceUID", "imagePositionPatient", "imageOrientationPatient", "localFilePath")
 				.values(instanceInfo.SOPInstanceUID, instanceInfo.imagePositionPatient,
-					instanceInfo.imageOrientationPatient, dcmPath)
+				        instanceInfo.imageOrientationPatient, dcmPath)
 				.execute();
 			std::cout << "Instance [" << seriesIter->path().filename().string() << "] Info Inserted." << std::endl;
 		}
