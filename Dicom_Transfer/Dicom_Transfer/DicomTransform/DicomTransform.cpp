@@ -1,20 +1,37 @@
-// DicomTransform.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+#include "dicomTransform.h"
+#include <cassert>
 
-#include <iostream>
-
-int main()
+void GetDicomTransformInfo(DcmDataset*& dataSetPtr, DicomTransformInfo& info)
 {
-    std::cout << "Hello World!\n";
+	Uint16 uIntBuffer;
+	const Uint16* uIntPtrBuffer;
+	if (dataSetPtr->findAndGetUint16(DCM_Columns, uIntBuffer).good())
+	{
+		info.width = uIntBuffer;
+	}
+	if (dataSetPtr->findAndGetUint16(DCM_Rows, uIntBuffer).good())
+	{
+		info.height = uIntBuffer;
+	}
+	if (dataSetPtr->findAndGetUint16Array(DCM_PixelData, uIntPtrBuffer).good())
+	{
+		info.data = uIntPtrBuffer;
+	}
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+void SetNewDataset(DcmDataset*& datasetPtr, DicomTransformInfo& info)
+{
+	assert(datasetPtr->putAndInsertFloat64(DCM_WindowWidth, 1300.0).good());
+	assert(datasetPtr->putAndInsertUint16(DCM_Columns, info.width).good());
+	assert(datasetPtr->putAndInsertUint16(DCM_Rows, info.height).good());
+	assert(datasetPtr->putAndInsertUint16Array(DCM_PixelData, info.data, info.width * info.height).good());
+}
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+void Flip(DicomTransformInfo& data, FlipType type)
+{
+
+}
+
+void Rotate(DicomTransformInfo& data, RotateType type)
+{
+}
