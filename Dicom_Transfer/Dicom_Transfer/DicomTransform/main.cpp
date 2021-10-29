@@ -25,19 +25,17 @@ int main()
 	DcmDataset* datasetPtr = fileFormat.getDataset();
 	DicomTransformInfo dcmInfo;
 	GetDicomTransformInfo(datasetPtr,dcmInfo);
+	//std::cout << dcmInfo.height << "\t" << dcmInfo.width << std::endl;
 
-	Flip(dcmInfo, FlipType::HORIZONTAL);
+	Flip(dcmInfo, FlipType::VERTICAL);
+	//Flip(dcmInfo, FlipType::HORIZONTAL);
+	Rotate(dcmInfo, RotateType::RIGHT);
 	Rotate(dcmInfo, RotateType::LEFT);
 
-	std::cout << dcmInfo.height << "\t" << dcmInfo.width << std::endl;
+	//std::cout << dcmInfo.height << "\t" << dcmInfo.width << std::endl;
 	SetNewDataset(datasetPtr, dcmInfo);
 
-	status = fileFormat.saveFile("result.dcm", EXS_LittleEndianExplicit);
-	
-	if (status.bad())
-	{
-		std::cout << "DCM file create failed!" << std::endl;
-	}
+	assert(fileFormat.saveFile("result.dcm", EXS_LittleEndianExplicit).good());
 
 	return 0;
 }

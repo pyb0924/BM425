@@ -6,7 +6,7 @@ struct DicomTransformInfo
 {
 	Uint16 width;
 	Uint16 height;
-	const Uint16* data;
+	Uint16* dataPtr;
 };
 
 enum class FlipType
@@ -23,11 +23,11 @@ enum class RotateType
 
 void GetDicomTransformInfo(DcmDataset*& dataSetPtr, DicomTransformInfo& info);
 
-void SetNewDataset(DcmDataset*& datasetPtr, DicomTransformInfo& info);
+void SetNewDataset(DcmDataset*& datasetPtr, const DicomTransformInfo& info);
 
-void Flip(DicomTransformInfo& data, FlipType type);
+void Flip(DicomTransformInfo& info, FlipType type);
 
-void Rotate(DicomTransformInfo& data, RotateType type);
+void Rotate(DicomTransformInfo& info,  RotateType type);
 
 #endif // !DCM_TRANSFORM_H
 
