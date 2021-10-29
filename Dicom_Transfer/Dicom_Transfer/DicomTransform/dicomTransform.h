@@ -2,6 +2,7 @@
 #define DCM_TRANSFORM_H
 
 #include "dcmtk/dcmdata/dctk.h"
+
 struct DicomTransformInfo
 {
 	Uint16 width;

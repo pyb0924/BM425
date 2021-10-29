@@ -1,5 +1,6 @@
-#include "dicomTransform.h"
 #include <cassert>
+#include "dicomTransform.h"
+
 
 void GetDicomTransformInfo(DcmDataset*& dataSetPtr, DicomTransformInfo& info)
 {

@@ -1,12 +1,7 @@
 #include <iostream>
-#include <fstream>
 #include <cassert>
 
 #include <boost/filesystem.hpp>
-#include <mysqlx/xdevapi.h>
-
-#include <dcmtk/dcmdata/dcfilefo.h>
-#include <dcmtk/dcmdata/dcdeftag.h>
 
 #include "dbConstant.h"
 #include "dicomDB.h"

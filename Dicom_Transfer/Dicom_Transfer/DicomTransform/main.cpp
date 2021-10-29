@@ -1,14 +1,7 @@
-// DicomTransform.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
-
 #include <iostream>
 #include <cassert>
-#include <opencv2/opencv.hpp>
 
-//DCMTK
-#include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmdata/dctk.h"
+#include <dcmtk/config/osconfig.h>
 
 #include "dicomTransform.h"
 

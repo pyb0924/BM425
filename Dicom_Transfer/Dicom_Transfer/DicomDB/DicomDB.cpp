@@ -1,8 +1,7 @@
 #include <cassert>
 
 #include <boost/format.hpp>
-#include <dcmtk/dcmdata/dcfilefo.h>
-#include <dcmtk/dcmdata/dcdeftag.h>
+#include <dcmtk/dcmdata/dctk.h>
 
 #include "dicomDB.h"
 
