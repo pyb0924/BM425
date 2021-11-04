@@ -1,0 +1,176 @@
+(Group:Element)  ,TAG Description                    ,VR,VM,Length    ,Value
+(0002:0000)      ,File Meta Information Group Length ,UL,1,4         ,202
+(0002:0001)      ,File Meta Information Version      ,OB,1,2         ,00\01
+(0002:0002)      ,Media Storage SOP Class UID        ,UI,1,26        ,1.2.840.10008.5.1.4.1.1.4
+(0002:0003)      ,Media Storage SOP Instance UID     ,UI,1,58        ,1.2.156.112605.189250953901957.210831081425.4.10712.141350
+(0002:0010)      ,Transfer Syntax UID                ,UI,1,20        ,1.2.840.10008.1.2.1 (Explicit VR Little Endian)
+(0002:0012)      ,Implementation Class UID           ,UI,1,28        ,1.2.276.0.7230010.3.0.3.6.0
+(0002:0013)      ,Implementation Version Name        ,SH,1,16        ,OFFIS_DCMTK_360
+(0008:0005)      ,Specific Character Set             ,CS,1,10        ,ISO_IR 192
+(0008:0008)      ,Image Type                         ,CS,4,22        ,ORIGINAL\PRIMARY\M\IF
+(0008:0012)      ,Instance Creation Date             ,DA,1,8         ,20210831
+(0008:0013)      ,Instance Creation Time             ,TM,1,14        ,161252.695261
+(0008:0016)      ,SOP Class UID                      ,UI,1,26        ,1.2.840.10008.5.1.4.1.1.4
+(0008:0018)      ,SOP Instance UID                   ,UI,1,58        ,1.2.156.112605.189250953901957.210831081425.4.10712.141350
+(0008:0020)      ,Study Date                         ,DA,1,8         ,20210831
+(0008:0021)      ,Series Date                        ,DA,1,8         ,20210831
+(0008:0022)      ,Acquisition Date                   ,DA,1,8         ,20210831
+(0008:0023)      ,Content Date                       ,DA,1,8         ,20210831
+(0008:002A)      ,Acquisition Date Time              ,DT,1,18        ,20210831161247.984
+(0008:0030)      ,Study Time                         ,TM,1,6         ,161106
+(0008:0031)      ,Series Time                        ,TM,1,14        ,161425.542895
+(0008:0032)      ,Acquisition Time                   ,TM,1,10        ,161247.984
+(0008:0033)      ,Content Time                       ,TM,1,14        ,161252.695261
+(0008:0050)      ,Accession Number                   ,SH,0,0         ,
+(0008:0060)      ,Modality                           ,CS,1,2         ,MR
+(0008:0070)      ,Manufacturer                       ,LO,1,4         ,UIH
+(0008:0080)      ,Institution Name                   ,LO,0,0         ,
+(0008:0081)      ,Institution Address                ,ST,0,0         ,
+(0008:0090)      ,Referring Physician Name           ,PN,0,0         ,
+(0008:1010)      ,Station Name                       ,SH,1,6         ,UIHMR
+(0008:1030)      ,Study Description                  ,LO,0,0         ,
+(0008:1032)      ,Procedure Code Sequence            ,SQ,1,-1        ,
+   (FFFE:E000)   ,Item                               ,,1,-1        ,
+      (0008:0100),Code Value                         ,SH,0,0         ,
+      (0008:0102),Coding Scheme Designator           ,SH,0,0         ,
+      (0008:0104),Code Meaning                       ,LO,0,0         ,
+   (FFFE:E00D)   ,Item Delimitation Item             ,,0,          ,
+(FFFE:E0DD)      ,Sequence Delimitation Item         ,,0,          ,
+(0008:103E)      ,Series Description                 ,LO,1,14        ,gre_scout_NDC
+(0008:1050)      ,Performing Physician Name          ,PN,0,0         ,
+(0008:1070)      ,Operators Name                     ,PN,0,0         ,
+(0008:1090)      ,Manufacturer Model Name            ,LO,1,8         ,uMR 780
+(0008:1110)      ,Referenced Study Sequence          ,SQ,1,-1        ,
+   (FFFE:E000)   ,Item                               ,,1,-1        ,
+      (0008:1150),Referenced SOP Class UID           ,UI,0,0         ,
+      (0008:1155),Referenced SOP Instance UID        ,UI,0,0         ,
+   (FFFE:E00D)   ,Item Delimitation Item             ,,0,          ,
+(FFFE:E0DD)      ,Sequence Delimitation Item         ,,0,          ,
+(0008:1111)      ,Referenced Performed Procedure Step Sequence,SQ,1,-1        ,
+   (FFFE:E000)   ,Item                               ,,1,-1        ,
+      (0008:1150),Referenced SOP Class UID           ,UI,1,24        ,1.2.840.10008.3.1.2.3.3
+      (0008:1155),Referenced SOP Instance UID        ,UI,1,58        ,1.2.156.112605.189250953901957.210831081109.7.10960.14450
+   (FFFE:E00D)   ,Item Delimitation Item             ,,0,          ,
+(FFFE:E0DD)      ,Sequence Delimitation Item         ,,0,          ,
+(0008:9208)      ,Complex Image Component            ,CS,1,10        ,MAGNITUDE
+(0010:0010)      ,Patient Name                       ,PN,1,8         ,Pei Yibo
+(0010:0020)      ,Patient ID                         ,LO,1,24        ,PID-20210831-161031-1377
+(0010:0030)      ,Patient Birth Date                 ,DA,0,0         ,
+(0010:0040)      ,Patient Sex                        ,CS,1,2         ,M
+(0010:1010)      ,Patient Age                        ,AS,1,4         ,021Y
+(0010:1020)      ,Patient Size                       ,DS,1,4         ,1.76
+(0010:1030)      ,Patient Weight                     ,DS,1,2         ,76
+(0010:4000)      ,Patient Comments                   ,LT,0,0         ,
+(0018:0015)      ,Body Part Examined                 ,CS,1,8         ,ABDOMEN
+(0018:0020)      ,Scanning Sequence                  ,CS,1,2         ,GR
+(0018:0021)      ,Sequence Variant                   ,CS,1,4         ,NONE
+(0018:0022)      ,Scan Options                       ,CS,0,0         ,
+(0018:0023)      ,MR Acquisition Type                ,CS,1,2         ,2D
+(0018:0024)      ,Sequence Name                      ,SH,1,6         ,gre_sp
+(0018:0050)      ,Slice Thickness                    ,DS,1,2         ,8
+(0018:0080)      ,Repetition Time                    ,DS,1,4         ,6.5
+(0018:0081)      ,Echo Time                          ,DS,1,4         ,3.35
+(0018:0083)      ,Number Of Averages                 ,DS,1,2         ,1
+(0018:0084)      ,Imaging Frequency                  ,DS,1,10        ,128.239471
+(0018:0085)      ,Imaged Nucleus                     ,SH,1,2         ,1H
+(0018:0086)      ,Echo Numbers                       ,IS,0,0         ,
+(0018:0087)      ,Magnetic Field Strength            ,DS,1,4         ,3.0
+(0018:0088)      ,Spacing Between Slices             ,DS,1,2         ,24
+(0018:0091)      ,Echo Train Length                  ,IS,1,2         ,1
+(0018:0095)      ,Pixel Bandwidth                    ,DS,1,4         ,500
+(0018:1000)      ,Device Serial Number               ,LO,1,6         ,120014
+(0018:1020)      ,Software Versions                  ,LO,1,4         ,R002
+(0018:1030)      ,Protocol Name                      ,LO,1,10        ,gre_scout
+(0018:1061)      ,Trigger Source Or Type             ,LO,0,0         ,
+(0018:1251)      ,Transmit Coil Name                 ,SH,1,4         ,VTC
+(0018:1310)      ,Acquisition Matrix                 ,US,4,8         ,0\240\0\192
+(0018:1312)      ,In Plane Phase Encoding Direction  ,CS,1,4         ,ROW
+(0018:1314)      ,Flip Angle                         ,DS,1,2         ,15
+(0018:1316)      ,SAR                                ,DS,1,12        ,0.218455076
+(0018:1318)      ,d Bdt                              ,DS,1,10        ,0.74210757
+(0018:5100)      ,Patient Position                   ,CS,1,4         ,HFS
+(0018:9073)      ,Acquisition Duration               ,FD,1,8         ,752
+(0020:000D)      ,Study Instance UID                 ,UI,1,58        ,1.2.156.112605.189250953901957.210831081031.2.11248.16109
+(0020:000E)      ,Series Instance UID                ,UI,1,58        ,1.2.156.112605.189250953901957.210831081425.3.10712.31043
+(0020:0010)      ,Study ID                           ,SH,1,2         ,34
+(0020:0011)      ,Series Number                      ,IS,1,4         ,8001
+(0020:0013)      ,Instance Number                    ,IS,1,2         ,1
+(0020:0032)      ,Image Position Patient             ,DS,3,26        ,-24\-199.166672\199.166672
+(0020:0037)      ,Image Orientation Patient          ,DS,6,16        ,-0\1\-0\-0\-0\-1
+(0020:0052)      ,Frame Of Reference UID             ,UI,1,40        ,1.2.156.112605.20210831161225176.1.0.0.0
+(0020:0060)      ,Laterality                         ,CS,0,0         ,
+(0020:1040)      ,Position Reference Indicator       ,LO,0,0         ,
+(0020:1041)      ,Slice Location                     ,DS,1,4         ,-24
+(0020:4000)      ,Image Comments                     ,LT,0,0         ,
+(0028:0002)      ,Samples Per Pixel                  ,US,1,2         ,1
+(0028:0004)      ,Photometric Interpretation         ,CS,1,12        ,MONOCHROME2
+(0028:0010)      ,Rows                               ,US,1,2         ,240
+(0028:0011)      ,Columns                            ,US,1,2         ,240
+(0028:0030)      ,Pixel Spacing                      ,DS,2,22        ,1.66666663\1.66666663
+(0028:0100)      ,Bits Allocated                     ,US,1,2         ,16
+(0028:0101)      ,Bits Stored                        ,US,1,2         ,16
+(0028:0102)      ,High Bit                           ,US,1,2         ,15
+(0028:0103)      ,Pixel Representation               ,US,1,2         ,0
+(0028:0106)      ,Smallest Image Pixel Value         ,US,1,2         ,0
+(0028:0107)      ,Largest Image Pixel Value          ,US,1,2         ,390
+(0028:0301)      ,Burned In Annotation               ,CS,1,2         ,NO
+(0028:1050)      ,Window Center                      ,DS,1,4         ,177
+(0028:1051)      ,Window Width                       ,DS,1,4         ,379
+(0028:1055)      ,Window Center Width Explanation    ,LO,1,26        ,AWT2-53-0.90-1.00_1.0/1.0
+(0028:2110)      ,Lossy Image Compression            ,CS,1,2         ,00
+(0032:1032)      ,Requesting Physician               ,PN,0,0         ,
+(0032:1060)      ,Requested Procedure Description    ,LO,0,0         ,
+(0040:0244)      ,Performed Procedure Step Start Date,DA,1,8         ,20210831
+(0040:0245)      ,Performed Procedure Step Start Time,TM,1,6         ,161109
+(0040:0253)      ,Performed Procedure Step ID        ,SH,1,2         ,1
+(0040:0254)      ,Performed Procedure Step Description,LO,0,0         ,
+(0040:0260)      ,Performed Protocol Code Sequence   ,SQ,1,-1        ,
+   (FFFE:E000)   ,Item                               ,,1,-1        ,
+      (0008:0100),Code Value                         ,SH,0,0         ,
+      (0008:0102),Coding Scheme Designator           ,SH,0,0         ,
+      (0008:0104),Code Meaning                       ,LO,0,0         ,
+   (FFFE:E00D)   ,Item Delimitation Item             ,,0,          ,
+(FFFE:E0DD)      ,Sequence Delimitation Item         ,,0,          ,
+(0054:0081)      ,Number Of Slices                   ,US,1,2         ,14
+(0061:0010)      ,Private Creator                    ,LO,1,24        ,DB Dicom Private Creator
+(0061:0040)      ,Private Creator                    ,LO,1,22        ,Common Private Header
+(0061:1002)      ,Unknown  Tag &  Data               ,US,1,2         ,0
+(0061:1600)      ,Unknown  Tag &  Data               ,US,1,2         ,0
+(0061:4001)      ,Unknown  Tag &  Data               ,SH,1,10        ,IF:s1e0d1
+(0061:4002)      ,Unknown  Tag &  Data               ,SH,1,8         ,400*400
+(0065:0010)      ,Private Creator                    ,LO,1,20        ,Image Private Header
+(0065:1000)      ,Unknown  Tag &  Data               ,UL,1,4         ,1630399252
+(0065:1002)      ,Unknown  Tag &  Data               ,LO,1,4         ,SAG
+(0065:1003)      ,Unknown  Tag &  Data               ,LO,1,12        ,LBA1~3;SP5~8
+(0065:1004)      ,Unknown  Tag &  Data               ,SH,1,8         ,192*240
+(0065:1005)      ,Unknown  Tag &  Data               ,SH,1,4         ,A->P
+(0065:1006)      ,Unknown  Tag &  Data               ,IS,1,2         ,0
+(0065:1007)      ,Unknown  Tag &  Data               ,OB,1,25178     ,ff\00\79\fc\c0\d3\86\0d\08\3b\65\e4\cc\49\f3\c6\4d\0f\11\31\5c\c0...
+(0065:100D)      ,Unknown  Tag &  Data               ,SH,1,4         ,F:2
+(0065:100F)      ,Unknown  Tag &  Data               ,SH,1,6         ,R24.0
+(0065:1011)      ,Unknown  Tag &  Data               ,SH,1,4         ,*14
+(0065:1013)      ,Unknown  Tag &  Data               ,FD,1,8         ,0
+(0065:1014)      ,Unknown  Tag &  Data               ,DS,3,6         ,-1\0\0
+(0065:1015)      ,Unknown  Tag &  Data               ,DS,3,20        ,-24.000\0.000\0.000
+(0065:1016)      ,Unknown  Tag &  Data               ,UL,1,4         ,1
+(0065:1017)      ,Unknown  Tag &  Data               ,LO,1,22        ,Normal : WHBST : 0.036
+(0065:1018)      ,Unknown  Tag &  Data               ,LO,1,6         ,Normal
+(0065:1023)      ,Unknown  Tag &  Data               ,LO,1,2         ,0
+(0065:1025)      ,Unknown  Tag &  Data               ,DS,1,4         ,16.0
+(0065:1029)      ,Unknown  Tag &  Data               ,SH,1,4         ,0.8
+(0065:102B)      ,Unknown  Tag &  Data               ,LT,0,0         ,
+(0065:102C)      ,Unknown  Tag &  Data               ,IS,1,2         ,0
+(0065:102D)      ,Unknown  Tag &  Data               ,ST,1,6         ,gre_sp
+(0065:102E)      ,Unknown  Tag &  Data               ,LO,1,8         ,PreWhite
+(0065:102F)      ,Unknown  Tag &  Data               ,FL,1,4         ,0.76499999
+(0065:1031)      ,Unknown  Tag &  Data               ,SH,0,0         ,
+(0065:1033)      ,Unknown  Tag &  Data               ,SH,1,4         ,ISO
+(0065:1036)      ,Unknown  Tag &  Data               ,OB,1,2084      ,30\2f\2f\43\55\42\49\43\2f\2f\52\78\20\3d\20\30\2e\33\35\39\39\39...
+(0065:1039)      ,Unknown  Tag &  Data               ,SH,6,22        ,0.0\180\0.0\180\0.0\16
+(0065:1040)      ,Unknown  Tag &  Data               ,LO,1,22        ,R002.7.0.1001964-CD7P1
+(0065:1041)      ,Unknown  Tag &  Data               ,LT,1,4         ,NIN
+(0065:1055)      ,Unknown  Tag &  Data               ,DS,1,2         ,1
+(0065:1059)      ,Unknown  Tag &  Data               ,LO,1,16        ,193270863751956
+(0065:2001)      ,Unknown  Tag &  Data               ,SH,1,10        ,DCRemoved
+(0065:2002)      ,Unknown  Tag &  Data               ,UI,1,56        ,1.2.156.112605.189250953901957.210831081241.3.8528.18287
+(7FE0:0010)      ,Pixel Data                         ,OW,1,115200    ,0005\0008\0008\0008\0008\000b\0007\0002\0003\0009\0005\0006\0003...

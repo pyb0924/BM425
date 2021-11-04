@@ -78,8 +78,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\dcmtk\include;D:\dcmtk\dcmtk-3.6.6-win64-support-MD-iconv-msvc-15.8\zlib-1.2.11\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\dcmtk\dcmtk-3.6.6-win64-support-MD-iconv-msvc-15.8\zlib-1.2.11\lib;D:\dcmtk\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\boost_1_77_0\boost_1_77_0;D:\dcmtk\include;D:\dcmtk\dcmtk-3.6.6-win64-support-MD-iconv-msvc-15.8\zlib-1.2.11\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\boost_1_77_0\boost_1_77_0\stage\lib;D:\dcmtk\dcmtk-3.6.6-win64-support-MD-iconv-msvc-15.8\zlib-1.2.11\lib;D:\dcmtk\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -143,6 +143,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DicomSCU.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DicomSCU.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

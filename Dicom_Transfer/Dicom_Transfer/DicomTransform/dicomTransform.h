@@ -1,7 +1,7 @@
 #ifndef DCM_TRANSFORM_H
 #define DCM_TRANSFORM_H
 
-#include "dcmtk/dcmdata/dctk.h"
+#include <dcmtk/dcmdata/dctk.h>
 
 struct DicomTransformInfo
 {
