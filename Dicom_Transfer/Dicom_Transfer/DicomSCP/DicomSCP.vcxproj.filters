@@ -18,5 +18,13 @@
     <ClCompile Include="DicomSCP.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="storeSCP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="storeSCP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

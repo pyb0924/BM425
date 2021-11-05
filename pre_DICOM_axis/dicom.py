@@ -1,13 +1,12 @@
 import pydicom
 import numpy as np
 import matplotlib.pyplot as plt
-import sys
-import os
 import glob
 
 data_path=r".\data\FACT3d_tra_bh_FF_NDC_8003"
 # load the DICOM files
 files = []
+
 
 for fname in glob.glob(data_path+"/*.dcm", recursive=False):
     files.append(pydicom.dcmread(fname))

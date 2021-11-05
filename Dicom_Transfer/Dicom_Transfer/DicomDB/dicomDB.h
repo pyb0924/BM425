@@ -6,8 +6,9 @@
 
 using namespace mysqlx;
 
-struct SeriesIndexInfo
+struct DcmIndexInfo
 {
+	std::string SOPInstanceUID;
 	std::string patientName;
 	std::string patientID;
 	std::string studyID;
@@ -17,17 +18,9 @@ struct SeriesIndexInfo
 	short seriesNumber = 0;
 };
 
-struct SeriesInstanceInfo
-{
-	std::string SOPInstanceUID;
-	std::string imagePositionPatient;
-	std::string imageOrientationPatient;
-};
-
-void GetSeriesIndexInfo(std::string dcmPath, SeriesIndexInfo& seriesIndexInfo);
-
-void GetSeriesInstanceInfo(std::string dcmPath, SeriesInstanceInfo& seriesInstanceInfo);
-
 Table CreateTableFromSQL(Session& session, const string& schemaName, const string& tableName, string createSQL);
 
+void GetDcmIndexInfo(DcmFileFormat& fileformat, DcmIndexInfo& dcmIndexInfo);
+
+void InsertDcmToDB(DcmFileFormat& fileformat, Table& table);
 #endif

@@ -5,33 +5,27 @@
 
 using namespace mysqlx;
 
-// login info
-static std::string host = "localhost";
-const int port = 33060;
-static std::string username = "pyb0924";
-static std::string password = "peter2000";
+// DB info
+namespace mydb {
+	static std::string host = "localhost";
+	const int port = 33060;
+	static std::string username = "pyb0924";
+	static std::string password = "peter2000";
+	static string schemaName = "dicom";
+	static string tableName = "test_dicom_db";
+};
 
-//DB info
-static string schemaName = string("dicom");
-static string seriesIndexStr = "series_index";
-static std::string dataPath = "E:\\BM425\\data";
 
 //SQL string
-static string createIndexTableSQL = "CREATE TABLE %s (\
+static string createTableSQL = "CREATE TABLE %s (\
+SOPInstanceUID VARCHAR(64) NOT NULL UNIQUE,\
 patientName VARCHAR(64) NOT NULL,\
 patientID VARCHAR(64) NOT NULL,\
 studyID VARCHAR(16) NOT NULL,\
 studyInstanceUID VARCHAR(64) NOT NULL,\
 seriesDescription VARCHAR(64) NOT NULL,\
-seriesInstanceUID VARCHAR(64) NOT NULL UNIQUE,\
+seriesInstanceUID VARCHAR(64) NOT NULL,\
 seriesNumber SMALLINT NOT NULL,\
-PRIMARY KEY(seriesInstanceUID));";
-
-static string createInstanceTableSQL = "CREATE TABLE %s (\
-SOPInstanceUID VARCHAR(64) NOT NULL UNIQUE,\
-imagePositionPatient VARCHAR(64) NOT NULL,\
-imageOrientationPatient VARCHAR(16) NOT NULL,\
-localFilePath VARCHAR(256) NOT NULL,\
 PRIMARY KEY(SOPInstanceUID))";
 
 #endif // !DB_CONSTANT_H

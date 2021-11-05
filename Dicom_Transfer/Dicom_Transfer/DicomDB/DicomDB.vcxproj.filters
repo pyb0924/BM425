@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="testDB.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="dicomDB.cpp">
@@ -23,8 +23,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="createSeriesIndex.sql" />
-    <None Include="createInstance.sql" />
+    <None Include="createTable.sql" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dicomDB.h">

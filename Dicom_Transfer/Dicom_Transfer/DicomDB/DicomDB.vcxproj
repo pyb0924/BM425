@@ -143,11 +143,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="dicomDB.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="testDB.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="createInstance.sql" />
-    <None Include="createSeriesIndex.sql" />
+    <None Include="createTable.sql" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dbConstant.h" />
