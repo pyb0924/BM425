@@ -21,10 +21,9 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{e24f8f03-578a-42dc-90df-c58af591c82e}</ProjectGuid>
-    <RootNamespace>DicomSCU</RootNamespace>
+    <ProjectGuid>{8f5d80c9-9c24-45a7-a04a-03aec88040eb}</ProjectGuid>
+    <RootNamespace>DicomJPEG</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>DicomSCU</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -79,8 +78,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\boost_1_77_0\boost_1_77_0;D:\dcmtk\include;D:\dcmtk\dcmtk-3.6.6-win64-support-MD-iconv-msvc-15.8\zlib-1.2.11\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\boost_1_77_0\boost_1_77_0\stage\lib;D:\dcmtk\dcmtk-3.6.6-win64-support-MD-iconv-msvc-15.8\zlib-1.2.11\lib;D:\dcmtk\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\dcmtk\dcmtk-3.6.6-win64-support-MD-iconv-msvc-15.8\zlib-1.2.11\include;D:\dcmtk\include;D:\boost_1_77_0\boost_1_77_0;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\dcmtk\dcmtk-3.6.6-win64-support-MD-iconv-msvc-15.8\zlib-1.2.11\lib;D:\dcmtk\lib;D:\boost_1_77_0\boost_1_77_0\stage\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -143,11 +142,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DicomSCU.cpp" />
-    <ClCompile Include="storeSCU.cpp" />
+    <ClCompile Include="dicomJPEG.cpp" />
+    <ClCompile Include="testJPEG.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DicomSCU.h" />
+    <ClInclude Include="dicomJPEG.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

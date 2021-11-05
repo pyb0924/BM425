@@ -145,7 +145,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DicomSCP.cpp" />
+    <ClCompile Include="dicomSCP.cpp" />
     <ClCompile Include="storeSCP.cpp" />
   </ItemGroup>
   <ItemGroup>

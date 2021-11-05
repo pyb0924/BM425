@@ -1,7 +1,6 @@
 #include <cassert>
 #include <Windows.h>
 
-#include <boost/program_options.hpp>
 #include <boost/filesystem.hpp>
 
 #include <dcmtk/config/osconfig.h>
@@ -10,26 +9,12 @@
 
 #include "DicomSCU.h"
 
-namespace po = boost::program_options;
 namespace fs = boost::filesystem;
 
 int main(int argc, char* argv[])
 {
-	CompressType eCompressType;
-	int iCompressOption = 0;
-	po::options_description cmd(OFFIS_CONSOLE_APPLICATION);
-	std::string sDicomPath;
-	cmd.add_options()
-		("path,p", po::value<std::string>(&sDicomPath)->required(), "DICOM file path (file or directory)")
-		("compress,c", po::value<int>(&iCompressOption)->default_value(0), "DICOM compress level")
-		("help,h", "show help message");
-	po::parse_command_line(argc, argv, cmd);
-
-	po::variables_map vm;
-	po::store(po::parse_command_line(argc, argv, cmd), vm);
-	po::notify(vm);
-
-	eCompressType = static_cast<CompressType>(iCompressOption);
+	std::string sDicomPath("E:\\BM425\\pre_DICOM_axis\\test.dcm");
+	fs::path pDicomPath(sDicomPath);
 
 	OFLog::configure(OFLogger::DEBUG_LOG_LEVEL);
 	DcmSCU scu;
@@ -55,7 +40,7 @@ int main(int argc, char* argv[])
 	assert(scu.sendECHORequest(0).good());
 
 	// C-STORE
-	fs::path pDicomPath(sDicomPath);
+	
 	OFString file;
 	if (fs::is_directory(pDicomPath))
 	{
@@ -63,12 +48,12 @@ int main(int argc, char* argv[])
 		for (fs::recursive_directory_iterator iter(pDicomPath); iter != endIter; iter++)
 		{
 			file = iter->path().string().c_str();
-			assert(ExecuteCStore(scu, UID_MRImageStorage, file, eCompressType));
+			assert(ExecuteCStore(scu, UID_MRImageStorage, file));
 		}
 	}
 	else {
 		file = sDicomPath.c_str();
-		assert(ExecuteCStore(scu, UID_MRImageStorage, file, eCompressType));
+		assert(ExecuteCStore(scu, UID_MRImageStorage, file));
 	}
 
 	// close connection

@@ -15,15 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="dicomSCP.cpp">
+    <ClCompile Include="dicomJPEG.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="storeSCP.cpp">
+    <ClCompile Include="testJPEG.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="storeSCP.h">
+    <ClInclude Include="dicomJPEG.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
