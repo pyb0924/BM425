@@ -149,7 +149,6 @@
     <None Include="createTable.sql" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="dbConstant.h" />
     <ClInclude Include="dicomDB.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

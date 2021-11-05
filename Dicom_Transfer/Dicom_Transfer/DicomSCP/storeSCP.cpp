@@ -18,6 +18,8 @@
 #include "dcmtk/dcmdata/dcostrmz.h"
 #include "storeSCP.h"
 
+#include "../DicomJPEG/dicomJPEG.h"
+#include "../DicomDB/dicomDB.h"
 struct StoreCallbackData {
     DcmFileFormat* dcmff;
     T_ASC_Association* assoc;

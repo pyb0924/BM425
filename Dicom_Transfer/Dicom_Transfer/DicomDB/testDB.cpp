@@ -3,7 +3,7 @@
 
 #include <boost/filesystem.hpp>
 #include <dcmtk/dcmdata/dctk.h>
-#include "dbConstant.h"
+
 #include "dicomDB.h"
 
 using namespace mysqlx;
