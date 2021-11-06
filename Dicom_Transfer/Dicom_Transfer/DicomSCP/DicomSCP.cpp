@@ -1928,7 +1928,7 @@ storeSCPCallback(
                 outputFileNameArray.push_back(OFStandard::getFilenameFromPath(tmpStr, fileName));
             }
 
-            // TODO compress
+            // compress
             DJEncoderRegistration::registerCodecs(); // register JPEG codecs
             
             DcmDataset* dataset = cbdata->dcmff->getDataset();

@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DicomTransform", "DicomTran
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DicomJPEG", "DicomJPEG\DicomJPEG.vcxproj", "{8F5D80C9-9C24-45A7-A04A-03AEC88040EB}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MySCP", "MySCP\MySCP.vcxproj", "{A54BF741-5A75-4E23-988D-CFE2E08CF1CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -61,6 +63,14 @@ Global
 		{8F5D80C9-9C24-45A7-A04A-03AEC88040EB}.Release|x64.Build.0 = Release|x64
 		{8F5D80C9-9C24-45A7-A04A-03AEC88040EB}.Release|x86.ActiveCfg = Release|Win32
 		{8F5D80C9-9C24-45A7-A04A-03AEC88040EB}.Release|x86.Build.0 = Release|Win32
+		{A54BF741-5A75-4E23-988D-CFE2E08CF1CA}.Debug|x64.ActiveCfg = Debug|x64
+		{A54BF741-5A75-4E23-988D-CFE2E08CF1CA}.Debug|x64.Build.0 = Debug|x64
+		{A54BF741-5A75-4E23-988D-CFE2E08CF1CA}.Debug|x86.ActiveCfg = Debug|Win32
+		{A54BF741-5A75-4E23-988D-CFE2E08CF1CA}.Debug|x86.Build.0 = Debug|Win32
+		{A54BF741-5A75-4E23-988D-CFE2E08CF1CA}.Release|x64.ActiveCfg = Release|x64
+		{A54BF741-5A75-4E23-988D-CFE2E08CF1CA}.Release|x64.Build.0 = Release|x64
+		{A54BF741-5A75-4E23-988D-CFE2E08CF1CA}.Release|x86.ActiveCfg = Release|Win32
+		{A54BF741-5A75-4E23-988D-CFE2E08CF1CA}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

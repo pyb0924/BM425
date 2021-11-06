@@ -40,9 +40,7 @@ int main(int argc, char* argv[])
 	// C-ECHO: test connection
 	assert(scu.sendECHORequest(0).good());
 
-	
-	// C-STORE
-	
+	// C-STORE	
 	OFString file;
 	if (fs::is_directory(pDicomPath))
 	{
