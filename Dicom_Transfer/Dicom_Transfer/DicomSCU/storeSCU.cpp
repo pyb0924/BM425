@@ -13,7 +13,7 @@ namespace fs = boost::filesystem;
 
 int main(int argc, char* argv[])
 {
-	std::string sDicomPath("E:\\BM425\\pre_DICOM_axis\\test.dcm");
+	std::string sDicomPath("E:\\BM425\\report\\pre_DICOM_axis\\test.dcm");
 	fs::path pDicomPath(sDicomPath);
 
 	OFLog::configure(OFLogger::DEBUG_LOG_LEVEL);
@@ -27,6 +27,7 @@ int main(int argc, char* argv[])
 
 	// transfer syntaxes list
 	OFList<OFString> ts;
+	
 	ts.push_back(UID_LittleEndianExplicitTransferSyntax);
 	ts.push_back(UID_BigEndianExplicitTransferSyntax);
 	ts.push_back(UID_LittleEndianImplicitTransferSyntax);
@@ -39,6 +40,7 @@ int main(int argc, char* argv[])
 	// C-ECHO: test connection
 	assert(scu.sendECHORequest(0).good());
 
+	
 	// C-STORE
 	
 	OFString file;

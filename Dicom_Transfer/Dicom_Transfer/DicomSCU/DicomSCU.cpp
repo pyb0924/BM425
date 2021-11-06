@@ -2,7 +2,7 @@
 #include <dcmtk/dcmjpeg/djencode.h>
 #include "DicomSCU.h"
 
-Uint8 findUncompressedPC(const OFString& sopClass, DcmSCU& scu)
+Uint8 FindPresentationContext(const OFString& sopClass, DcmSCU& scu)
 {
 	Uint8 pc;
 	pc = scu.findPresentationContextID(sopClass, UID_LittleEndianExplicitTransferSyntax);
@@ -15,7 +15,7 @@ Uint8 findUncompressedPC(const OFString& sopClass, DcmSCU& scu)
 
 bool ExecuteCStore(DcmSCU& scu, const OFString& sopClass, const OFString& filePath)
 {
-	T_ASC_PresentationContextID presID = findUncompressedPC(sopClass, scu);
+	T_ASC_PresentationContextID presID =  FindPresentationContext(sopClass, scu);
 	if (presID == 0)
 	{
 		DCMNET_ERROR("There is no uncompressed presentation context for C-STORE");
