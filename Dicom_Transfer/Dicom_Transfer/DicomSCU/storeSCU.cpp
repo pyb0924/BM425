@@ -13,7 +13,11 @@ namespace fs = boost::filesystem;
 
 int main(int argc, char* argv[])
 {
-	std::string sDicomPath("E:\\BM425\\report\\pre_DICOM_axis\\test.dcm");
+	if (argc != 2)
+	{
+		throw "number of parameters wrong! need 1";
+	}
+	std::string sDicomPath(argv[1]);
 	fs::path pDicomPath(sDicomPath);
 
 	OFLog::configure(OFLogger::DEBUG_LOG_LEVEL);

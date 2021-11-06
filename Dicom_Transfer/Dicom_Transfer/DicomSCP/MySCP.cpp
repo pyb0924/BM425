@@ -79,13 +79,13 @@ MySCP::MySCP()
 {
 }
 
-MySCP::MySCP(int port, std::string aeTitle, eCompressType type, const char* name,bool useDB)
+MySCP::MySCP(int port, std::string aeTitle, eCompressType type, std::string name,bool useDB)
 {
 	m_port = port;
 	m_aeTitle = aeTitle;
 	m_useDB = useDB;
 	setWriteTransferSyntax(type);
-	setSaveFileName(name);
+	setSaveFileName(name.c_str());
 }
 
 void MySCP::setWriteTransferSyntax(eCompressType compressType)

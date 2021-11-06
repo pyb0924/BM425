@@ -27,7 +27,7 @@ class MySCP
 {
 public:
 	MySCP();
-	MySCP(int port, std::string aeTitle, eCompressType type, const char* name,bool useDB);
+	MySCP(int port, std::string aeTitle, eCompressType type, std::string name,bool useDB);
 	void setPort(int port);
 	void setWriteTransferSyntax(eCompressType type);
 	void setAETitle(std::string aeTitle);
