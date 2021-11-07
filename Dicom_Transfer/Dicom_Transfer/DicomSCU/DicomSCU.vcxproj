@@ -144,7 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DicomSCU.cpp" />
-    <ClCompile Include="storeSCU.cpp" />
+    <ClCompile Include="testSCU.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DicomSCU.h" />

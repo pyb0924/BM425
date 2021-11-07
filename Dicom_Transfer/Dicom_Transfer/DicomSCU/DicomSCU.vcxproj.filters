@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="storeSCU.cpp">
+    <ClCompile Include="testSCU.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DicomSCU.cpp">
