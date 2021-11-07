@@ -67,9 +67,27 @@ void InsertDcmToDB(DcmFileFormat& fileformat, Table& table)
 {
 	DcmIndexInfo indexInfo;
 	GetDcmIndexInfo(fileformat, indexInfo);
+	RowResult result=table.select("SOPInstanceUID").execute();
+	Row row;
+	bool flag = false;
+	while ((row = result.fetchOne()))
+	{
+		if (std::string(row[0]) == indexInfo.SOPInstanceUID)
+		{
+			flag = true;
+			break;
+		}
+	}
+	if (flag)
+	{
+		std::cout << "SOPInstance Existed in DB!" << std::endl;
+		return;
+	}
+
 	table.insert("SOPInstanceUID", "patientName", "patientID", "studyID", "studyInstanceUID", 
 		"seriesDescription", "seriesInstanceUID", "seriesNumber")
 		.values(indexInfo.SOPInstanceUID,indexInfo.patientName, indexInfo.patientID, indexInfo.studyID,
 			indexInfo.studyInstanceUID, indexInfo.seriesDescription, indexInfo.seriesInstanceUID, indexInfo.seriesNumber)
 		.execute();
+	std::cout << "insert DICOM index to DB success!" << std::endl;
 }

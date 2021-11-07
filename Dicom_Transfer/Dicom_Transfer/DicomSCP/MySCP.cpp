@@ -35,10 +35,9 @@ static void StoreSCPCallback(void* callbackData, T_DIMSE_StoreProgress* progress
 		if (cbdata->useDB)
 		{
 			Session session(mydb::host, mydb::port, mydb::username, mydb::password);
-			Table dcmTable = CreateTableFromSQL(session, mydb::schemaName, "test_MySCP", createTableSQL);
+			Table dcmTable = session.getSchema(mydb::schemaName).getTable("test_MySCP");
 			assert(dcmTable.existsInDatabase());
 			InsertDcmToDB(*(cbdata->dcmff), dcmTable);
-			std::cout << "insert DICOM index to DB success!" << std::endl;
 		}
 		
 		if (rsp->DimseStatus == STATUS_Success) {

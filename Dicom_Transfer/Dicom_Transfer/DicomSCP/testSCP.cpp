@@ -24,6 +24,12 @@ int main(int argc, char const* argv[])
 	po::store(po::parse_command_line(argc, argv, cmd), vm);
 	po::notify(vm);
 
+	if (vm.count("help"))
+	{
+		std::cout << cmd << std::endl;
+		return 1;
+	}
+
 	bool useDB = vm.count("db") ? true : false;
 
 	eCompressType type;

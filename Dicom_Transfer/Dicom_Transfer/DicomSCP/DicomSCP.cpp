@@ -1762,9 +1762,10 @@ storeSCPCallback(
         *statusDetail = nullptr;
         StoreCallbackData* cbdata = OFstatic_cast(StoreCallbackData*, callbackData);
         Session session(mydb::host, mydb::port, mydb::username, mydb::password);
-        Table dcmTable = CreateTableFromSQL(session, mydb::schemaName, "testSCP", createTableSQL);
+        Table dcmTable = session.getSchema(mydb::schemaName).getTable("test_MySCP");
         assert(dcmTable.existsInDatabase());
         InsertDcmToDB(*(cbdata->dcmff), dcmTable);
+
         if (rsp->DimseStatus == STATUS_Success) {
             if (!DU_findSOPClassAndInstanceInDataSet(*imageDataSet,
                 sopClass, sizeof(sopClass),
