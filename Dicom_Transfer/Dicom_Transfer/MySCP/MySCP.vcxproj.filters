@@ -15,15 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\DicomSCP\MySCP.cpp">
+    <ClCompile Include="testSCP.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\DicomSCP\testSCP.cpp">
+    <ClCompile Include="MySCP.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\DicomSCP\MySCP.h">
+    <ClInclude Include="MySCP.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -142,11 +142,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\DicomSCP\MySCP.cpp" />
-    <ClCompile Include="..\DicomSCP\testSCP.cpp" />
+    <ClCompile Include="MySCP.cpp" />
+    <ClCompile Include="testSCP.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\DicomSCP\MySCP.h" />
+    <ClInclude Include="MySCP.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
