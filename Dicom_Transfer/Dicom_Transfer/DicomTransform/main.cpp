@@ -23,7 +23,7 @@ int main()
 	Flip(dcmInfo, FlipType::VERTICAL);
 	//Flip(dcmInfo, FlipType::HORIZONTAL);
 	Rotate(dcmInfo, RotateType::RIGHT);
-	Rotate(dcmInfo, RotateType::LEFT);
+	//Rotate(dcmInfo, RotateType::LEFT);
 
 	//std::cout << dcmInfo.height << "\t" << dcmInfo.width << std::endl;
 	SetNewDataset(datasetPtr, dcmInfo);

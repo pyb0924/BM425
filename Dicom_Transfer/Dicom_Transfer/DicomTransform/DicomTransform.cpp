@@ -23,7 +23,7 @@ void SetNewDataset(DcmDataset*& datasetPtr, const DicomTransformInfo& info)
 {
 	assert(datasetPtr->putAndInsertUint16(DCM_Columns, info.width).good());
 	assert(datasetPtr->putAndInsertUint16(DCM_Rows, info.height).good());
-	assert(datasetPtr->putAndInsertUint16Array(DCM_PixelData, info.dataPtr, info.width * info.height).good());
+	//assert(datasetPtr->putAndInsertUint16Array(DCM_PixelData, info.dataPtr, info.width * info.height).good());
 }
 
 void Flip(DicomTransformInfo& info, FlipType type)
