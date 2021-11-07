@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="testTransform.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="dicomTransform.cpp">

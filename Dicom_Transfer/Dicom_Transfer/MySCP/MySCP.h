@@ -1,12 +1,18 @@
 #ifndef STORE_SCP_H
 #define STORE_SCP_H
 
-#include "dcmtk/ofstd/ofcond.h"
-#include "dcmtk/dcmnet/assoc.h"
-#include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmnet/dimse.h"
+#include <dcmtk/config/osconfig.h>
+#include <dcmtk/ofstd/ofcond.h>
+#include <dcmtk/dcmnet/assoc.h>
+#include <dcmtk/dcmnet/dimse.h>
 #include <dcmtk/dcmnet/dcasccfg.h>
 #include <dcmtk/dcmdata/dcfilefo.h>
+
+enum class eCompressType
+{
+	NO_COMPRESSION = 0,
+	JPEG_COMPRESSION
+};
 
 struct StoreCallbackData
 {
@@ -17,11 +23,8 @@ struct StoreCallbackData
 	bool useDB;
 };
 
-enum class eCompressType
-{
-	NO_COMPRESSION = 0,
-	JPEG_COMPRESSION
-};
+static void StoreSCPCallback(void* callbackData, T_DIMSE_StoreProgress* progress, T_DIMSE_C_StoreRQ* req,
+	char* imageFileName, DcmDataset** imageDataSet, T_DIMSE_C_StoreRSP* rsp, DcmDataset** statusDetail);
 
 class MySCP
 {

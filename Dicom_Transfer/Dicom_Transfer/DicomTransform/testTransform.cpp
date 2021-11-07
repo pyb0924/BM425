@@ -7,7 +7,7 @@
 
 int main()
 {
-	std::string filePath = "E:\\BM425\\data\\FACT3d_tra_bh_FF_NDC_8003\\00000001.dcm";
+	std::string filePath = "E:\\BM425\\Dicom_Transfer\\data\\test.dcm";
 	DcmFileFormat fileFormat;
 	OFFilename dcmFileName = OFFilename(filePath.c_str());
 	OFCondition status = fileFormat.loadFile(dcmFileName);
@@ -28,7 +28,7 @@ int main()
 	//std::cout << dcmInfo.height << "\t" << dcmInfo.width << std::endl;
 	SetNewDataset(datasetPtr, dcmInfo);
 
-	assert(fileFormat.saveFile("result.dcm", EXS_LittleEndianExplicit).good());
+	assert(fileFormat.saveFile("E:\\BM425\\Dicom_Transfer\\data\\transform.dcm", EXS_LittleEndianExplicit).good());
 
 	return 0;
 }
