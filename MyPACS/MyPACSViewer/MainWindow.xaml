@@ -14,8 +14,8 @@
                     <MenuItem x:Name="OpenFileMenu" Header="Open File" Click="OpenFileMenu_Click"/>
                     <MenuItem x:Name="OpenFolderMenu" Header="Open Folder" Click="OpenFolderMenu_Click"/>
                     <Separator/>
-                    <MenuItem Header="Export"/>
-                    <MenuItem Header="Exit"/>
+                    <MenuItem x:Name="ExportMenu" Header="Export" Click="ExportMenu_Click"/>
+                    <MenuItem x:Name="ExitMenu" Header="Exit" Click="ExitMenu_Click"/>
                 </MenuItem>
 
                 <MenuItem Header="Query/Retrive" >
@@ -57,17 +57,21 @@
                 </Button>
             </ToolBar>
 
-            <StatusBar DockPanel.Dock="Bottom" Height="20"></StatusBar>
+            <StatusBar x:Name="StatusBar" DockPanel.Dock="Bottom" Height="24">
+                <StatusBarItem >
+                    <TextBlock x:Name="StatusBarText"/>
+                </StatusBarItem>
+            </StatusBar>
             
             <DockPanel>
-                <TreeView x:Name="fileExplorer" DockPanel.Dock="Left" Width="240">
+                <TreeView x:Name="fileExplorer" DockPanel.Dock="Left" Width="Auto" MinWidth="200"> 
                     <TreeView.ItemTemplate>
-                        <HierarchicalDataTemplate DataType="{x:Type local:FileNodeItem}" ItemsSource="{Binding Path=Children}">
-                            <StackPanel Orientation="Horizontal">
+                        <HierarchicalDataTemplate DataType="{x:Type local:FileNodeItem}" ItemsSource="{Binding Path=Children.Values}">
+                            <StackPanel Orientation="Horizontal" Margin="2">
                                 <Image Source="{Binding Icon}" Height="15" Margin="0,0,5,0"/>
-                                <TextBlock VerticalAlignment="Center" Text="{Binding Name}"></TextBlock>
+                                <TextBlock VerticalAlignment="Center" Text="{Binding DisplayName}"></TextBlock>
                                 <StackPanel.ToolTip>
-                                    <TextBlock VerticalAlignment="Center" Text="{Binding Name}" TextWrapping="Wrap" MaxWidth="200" ></TextBlock>
+                                    <TextBlock VerticalAlignment="Center" Text="{Binding DisplayName}" TextWrapping="Wrap" MaxWidth="200"></TextBlock>
                                 </StackPanel.ToolTip>
                             </StackPanel>
                         </HierarchicalDataTemplate>
