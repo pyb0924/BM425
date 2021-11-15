@@ -3,11 +3,94 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
         xmlns:local="clr-namespace:MyPACSViewer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MyPACSViewer" Icon="/Resources/icon.ico" Height="720" Width="1280">
     <Grid>
-       
+        <DockPanel>
+            <Menu DockPanel.Dock="Top" FontSize="14" Padding="5">
+                <MenuItem Header="File" >
+                    <MenuItem x:Name="OpenFileMenu" Header="Open File" Click="OpenFileMenu_Click"/>
+                    <MenuItem x:Name="OpenFolderMenu" Header="Open Folder" Click="OpenFolderMenu_Click"/>
+                    <Separator/>
+                    <MenuItem Header="Export"/>
+                    <MenuItem Header="Exit"/>
+                </MenuItem>
 
+                <MenuItem Header="Query/Retrive" >
+                    <MenuItem Header="Configure"/>
+                </MenuItem>
+                <MenuItem Header="Processing">
+                    <MenuItem Header="SetCenter"/>
+                    <MenuItem Header="Zoom"/>
+                    <MenuItem Header="Flip Horizontal"/>
+                    <MenuItem Header="Flip Vertical"/>
+                    <Separator/>
+                    <MenuItem Header="Invert Color"/>
+                    <MenuItem Header="Window Level"/>
+                    <Separator/>
+                    <MenuItem Header="Revert All"/>
+                </MenuItem>
+            </Menu>
+
+            <ToolBar  DockPanel.Dock="Top">
+                <Button x:Name="Rotate_horizontalBtn" Click="Rotate_horizontalBtn_Click">
+                    <StackPanel>
+                        <Image Height="30" Source="/Resources/flip-horizontal.png"/>
+                        <AccessText Text="Flip Horizontal"></AccessText>
+                    </StackPanel>
+                </Button>
+                <Separator/>
+                <Button x:Name="Rotate_verticalBtn" Click="Rotate_verticalBtn_Click">
+                    <StackPanel>
+                        <Image Height="30"  Source="/Resources/flip-vertical.png"/>
+                        <AccessText Text="Flip Vertical"></AccessText>
+                    </StackPanel>
+                </Button>
+                <Separator/>
+                <Button x:Name="RevertBtn" Click="RevertBtn_Click">
+                    <StackPanel>
+                        <Image Height="30"  Source="/Resources/revert.png"/>
+                        <AccessText Text="Revert All"></AccessText>
+                    </StackPanel>
+                </Button>
+            </ToolBar>
+
+            <StatusBar DockPanel.Dock="Bottom" Height="20"></StatusBar>
+            
+            <DockPanel>
+                <TreeView x:Name="fileExplorer" DockPanel.Dock="Left" Width="240">
+                    <TreeView.ItemTemplate>
+                        <HierarchicalDataTemplate DataType="{x:Type local:FileNodeItem}" ItemsSource="{Binding Path=Children}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{Binding Icon}" Height="15" Margin="0,0,5,0"/>
+                                <TextBlock VerticalAlignment="Center" Text="{Binding Name}"></TextBlock>
+                                <StackPanel.ToolTip>
+                                    <TextBlock VerticalAlignment="Center" Text="{Binding Name}" TextWrapping="Wrap" MaxWidth="200" ></TextBlock>
+                                </StackPanel.ToolTip>
+                            </StackPanel>
+                        </HierarchicalDataTemplate>
+                    </TreeView.ItemTemplate>
+                </TreeView>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <local:Viewer2D x:Name="viewer0" Grid.Column="0" Grid.Row="0"/>
+                    <local:Viewer2D x:Name="viewer1" Grid.Column="1" Grid.Row="0"/>
+                    <local:Viewer2D x:Name="viewer3" Grid.Column="0" Grid.Row="1"/>
+                    <local:Viewer2D x:Name="viewer4" Grid.Column="1" Grid.Row="1"/>
+                </Grid>
+            </DockPanel>
+            
+        </DockPanel>
+        
     </Grid>
 </Window>

@@ -17,7 +17,7 @@ namespace MyPACSViewer
     /// <summary>
     /// Interaction logic for Viewer2D.xaml
     /// </summary>
-    public partial class Viewer2D : Window
+    public partial class Viewer2D : UserControl
     {
         public Viewer2D()
         {
