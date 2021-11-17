@@ -9,6 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="x64\**" />
+    <EmbeddedResource Remove="x64\**" />
+    <None Remove="x64\**" />
+    <Page Remove="x64\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Resources\direction-adjustment.svg" />
     <None Remove="Resources\flip-horizontal.png" />
     <None Remove="Resources\flip-vertical.png" />

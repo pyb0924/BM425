@@ -25,7 +25,7 @@ namespace MyPACSViewer
             Children = new();
         }
 
-        public FileNodeItem(string name, string icon, string path= null)
+        public FileNodeItem(string name, string icon, string path = null)
         {
             DisplayName = name;
             Icon = icon;

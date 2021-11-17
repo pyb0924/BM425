@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,6 +16,8 @@ using System.Windows.Shapes;
 
 using FellowOakDicom;
 using System.IO;
+using FellowOakDicom.Imaging;
+using FellowOakDicom.Imaging.Render;
 
 namespace MyPACSViewer
 {
@@ -25,16 +26,115 @@ namespace MyPACSViewer
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly Dictionary<string, FileNodeItem> DicomDict;
-        private int FileCount;
+        private readonly Dictionary<string, FileNodeItem> _DicomDict;
+        private DicomDataset _MainDataset;
+        private DicomDataset _MaskDataset;
+
+        private enum DisplayMode { MODE_2D, MODE_3D };
+        private DisplayMode _mode;
+
 
         public MainWindow()
         {
             InitializeComponent();
-            DicomDict = new();
+            _DicomDict = new();
+            _mode = DisplayMode.MODE_2D;
         }
 
-        
+        // return count of files opened successfully
+        private async Task<int> GenerateDicomDict(FileInfo[] files)
+        {
+            if (files.Length == 0)
+            {
+                throw new FileNotFoundException("No DICOM files found in selected folder! Please retry!");
+            }
+            _DicomDict.Clear();
+            string tmp;
+            DicomFile dcmFile;
+            DicomDataset dcmDataSet;
+            FileNodeItem patientNode, studyNode, seriesNode, imageNode;
+            int errorCount = 0;
+            foreach (FileInfo file in files)
+            {
+                try
+                {
+                    dcmFile = await DicomFile.OpenAsync(file.FullName);
+                    dcmDataSet = dcmFile.Dataset;
+                    tmp = dcmDataSet.GetString(DicomTag.PatientID);
+                    if (_DicomDict.ContainsKey(tmp))
+                    {
+                        patientNode = _DicomDict[tmp];
+                    }
+                    else
+                    {
+                        patientNode = new(dcmDataSet.GetString(DicomTag.PatientName), FileNodeItem.PatientIcon);
+                        _DicomDict.Add(tmp, patientNode);
+                    }
+
+                    tmp = dcmDataSet.GetString(DicomTag.StudyInstanceUID);
+                    if (patientNode.Children.ContainsKey(tmp))
+                    {
+                        studyNode = patientNode.Children[tmp];
+                    }
+                    else
+                    {
+                        studyNode = new(dcmDataSet.GetString(DicomTag.Modality), FileNodeItem.StudyIcon);
+                        patientNode.Children.Add(tmp, studyNode);
+                    }
+
+                    tmp = dcmDataSet.GetString(DicomTag.SeriesInstanceUID);
+                    if (studyNode.Children.ContainsKey(tmp))
+                    {
+                        seriesNode = studyNode.Children[tmp];
+                    }
+                    else
+                    {
+                        seriesNode = new(dcmDataSet.GetString(DicomTag.SeriesDescription), FileNodeItem.SeriesIcon);
+                        studyNode.Children.Add(tmp, seriesNode);
+                    }
+
+                    tmp = dcmDataSet.GetString(DicomTag.SOPInstanceUID);
+                    if (seriesNode.Children.ContainsKey(tmp))
+                    {
+                        imageNode = seriesNode.Children[tmp];
+                    }
+                    else
+                    {
+                        imageNode = new(file.Name, FileNodeItem.InstanceIcon, file.FullName);
+                        seriesNode.Children.Add(tmp, imageNode);
+                    }
+                }
+                catch
+                {
+                    errorCount++;
+                }
+            }
+
+            fileExplorer.ItemsSource = _DicomDict.Values;
+            return files.Length - errorCount;
+        }
+
+        private void Display(DicomDataset dataset)
+        {
+            switch(_mode)
+            {
+                case DisplayMode.MODE_2D:
+                    DicomImage dcmImage = new(dataset);
+                    break;
+                case DisplayMode.MODE_3D:
+                    //TODO
+                    break;
+            }
+            
+
+        }
+
+        void Display2DView(DicomDataset dataset, Constant.DisplayPlane plane, bool displayVR = false)
+        {
+
+        }
+
+        // menu click 
         private void OpenFileMenu_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new();
@@ -50,27 +150,23 @@ namespace MyPACSViewer
                 StatusBarText.Text = "Open File Failed!";
                 return;
             }
-            DicomDict.Clear();
 
-            DicomFile dcmFile = DicomFile.Open(openFileDialog.FileName);
-            DicomDataset dcmDataSet = dcmFile.Dataset;
-
-            FileNodeItem patientNode = new(dcmDataSet.GetString(DicomTag.PatientName), FileNodeItem.PatientIcon);
-            FileNodeItem studyNode = new(dcmDataSet.GetString(DicomTag.Modality), FileNodeItem.StudyIcon);
-            FileNodeItem seriesNode = new(dcmDataSet.GetString(DicomTag.SeriesDescription), FileNodeItem.SeriesIcon);
-            FileNodeItem imageNode = new(openFileDialog.FileName, FileNodeItem.InstanceIcon, openFileDialog.FileName);
-
-            DicomDict.Add(dcmDataSet.GetString(DicomTag.PatientID), patientNode);
-            patientNode.Children.Add(dcmDataSet.GetString(DicomTag.StudyInstanceUID), studyNode);
-            studyNode.Children.Add(dcmDataSet.GetString(DicomTag.SeriesInstanceUID), seriesNode);
-            seriesNode.Children.Add(dcmDataSet.GetString(DicomTag.SOPInstanceUID), imageNode);
-
-            fileExplorer.ItemsSource = DicomDict.Values;
-            FileCount = 1;
-            StatusBarText.Text = "Open File Successfully!";
+            FileInfo[] files = { new FileInfo(openFileDialog.FileName) };
+            try
+            {
+                _ = GenerateDicomDict(files);
+                StatusBarText.Text = "Open File Successfully!";
+            }
+            catch (Exception ex)
+            {
+                StatusBarText.Text = ex.Message;
+                return;
+            }
+            DicomDataset dataset = DicomFile.Open(openFileDialog.FileName).Dataset;
+            Display(dataset);
         }
 
-        private void OpenFolderMenu_Click(object sender, RoutedEventArgs e)
+        private async void OpenFolderMenu_Click(object sender, RoutedEventArgs e)
         {
             FolderBrowserDialog openFolderDialog = new();
             if (openFolderDialog.ShowDialog() != System.Windows.Forms.DialogResult.OK)
@@ -80,63 +176,23 @@ namespace MyPACSViewer
             }
             DirectoryInfo dir = new(openFolderDialog.SelectedPath);
             var files = dir.GetFiles("*.dcm", SearchOption.AllDirectories);
-
-            DicomDict.Clear();
-            string tmp;
-            DicomFile dcmFile;
-            DicomDataset dcmDataSet;
-            FileNodeItem patientNode, studyNode, seriesNode, imageNode;
-            foreach (FileInfo file in files)
+            try
             {
-                dcmFile = DicomFile.Open(file.FullName);
-                dcmDataSet = dcmFile.Dataset;
-                tmp = dcmDataSet.GetString(DicomTag.PatientID);
-                if (DicomDict.ContainsKey(tmp))
-                {
-                    patientNode = DicomDict[tmp];
-                }
-                else
-                {
-                    patientNode = new(dcmDataSet.GetString(DicomTag.PatientName), FileNodeItem.PatientIcon);
-                    DicomDict.Add(tmp, patientNode);
-                }
-
-                tmp = dcmDataSet.GetString(DicomTag.StudyInstanceUID);
-                if (patientNode.Children.ContainsKey(tmp))
-                {
-                    studyNode = patientNode.Children[tmp];
-                }
-                else
-                {
-                    studyNode = new(dcmDataSet.GetString(DicomTag.Modality), FileNodeItem.StudyIcon);
-                    patientNode.Children.Add(tmp, studyNode);
-                }
-
-                tmp = dcmDataSet.GetString(DicomTag.SeriesInstanceUID);
-                if (studyNode.Children.ContainsKey(tmp))
-                {
-                    seriesNode = studyNode.Children[tmp];
-                }
-                else
-                {
-                    seriesNode = new(dcmDataSet.GetString(DicomTag.SeriesDescription), FileNodeItem.SeriesIcon);
-                    studyNode.Children.Add(tmp, seriesNode);
-                }
-
-                tmp = dcmDataSet.GetString(DicomTag.SOPInstanceUID);
-                if (seriesNode.Children.ContainsKey(tmp))
-                {
-                    imageNode = seriesNode.Children[tmp];
-                }
-                else
-                {
-                    imageNode = new(file.Name, FileNodeItem.InstanceIcon, file.FullName);
-                    seriesNode.Children.Add(tmp, imageNode);
-                }
+                int fileCount = await GenerateDicomDict(files);
+                StatusBarText.Text = $"Open {fileCount} Files Successfully! Total: {files.Length} Files";
             }
-            fileExplorer.ItemsSource = new List<FileNodeItem>(DicomDict.Values);
-            FileCount = files.Length;
-            StatusBarText.Text = "Open Folder Successfully! Total: " + FileCount.ToString() + " Files";
+            catch (Exception ex)
+            {
+                StatusBarText.Text = ex.Message;
+                return;
+            }
+
+            DicomDataset dataset = DicomFile.Open(files[0].FullName).Dataset;
+            Display(dataset);
+        }
+
+        private void QueryRetrieveMenu_Click(object sender, RoutedEventArgs e)
+        {
 
         }
 
@@ -151,9 +207,10 @@ namespace MyPACSViewer
         }
 
 
+        // toolBar button click
         private void RevertBtn_Click(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         private void Rotate_verticalBtn_Click(object sender, RoutedEventArgs e)
@@ -165,6 +222,5 @@ namespace MyPACSViewer
         {
 
         }
-
     }
 }

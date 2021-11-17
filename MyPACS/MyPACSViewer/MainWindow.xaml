@@ -13,14 +13,12 @@
                 <MenuItem Header="File" >
                     <MenuItem x:Name="OpenFileMenu" Header="Open File" Click="OpenFileMenu_Click"/>
                     <MenuItem x:Name="OpenFolderMenu" Header="Open Folder" Click="OpenFolderMenu_Click"/>
+                    <MenuItem x:Name="QueryRetrieveMenu" Header="Query/Retrive" Click="QueryRetrieveMenu_Click"/>
                     <Separator/>
                     <MenuItem x:Name="ExportMenu" Header="Export" Click="ExportMenu_Click"/>
                     <MenuItem x:Name="ExitMenu" Header="Exit" Click="ExitMenu_Click"/>
                 </MenuItem>
 
-                <MenuItem Header="Query/Retrive" >
-                    <MenuItem Header="Configure"/>
-                </MenuItem>
                 <MenuItem Header="Processing">
                     <MenuItem Header="SetCenter"/>
                     <MenuItem Header="Zoom"/>
@@ -64,7 +62,7 @@
             </StatusBar>
             
             <DockPanel>
-                <TreeView x:Name="fileExplorer" DockPanel.Dock="Left" Width="Auto" MinWidth="200"> 
+                <TreeView x:Name="fileExplorer" DockPanel.Dock="Left" Width="Auto" MinWidth="300"> 
                     <TreeView.ItemTemplate>
                         <HierarchicalDataTemplate DataType="{x:Type local:FileNodeItem}" ItemsSource="{Binding Path=Children.Values}">
                             <StackPanel Orientation="Horizontal" Margin="2">
@@ -77,7 +75,7 @@
                         </HierarchicalDataTemplate>
                     </TreeView.ItemTemplate>
                 </TreeView>
-                <Grid>
+                <Grid x:Name="MainViewer">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
@@ -87,10 +85,8 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <local:Viewer2D x:Name="viewer0" Grid.Column="0" Grid.Row="0"/>
-                    <local:Viewer2D x:Name="viewer1" Grid.Column="1" Grid.Row="0"/>
-                    <local:Viewer2D x:Name="viewer3" Grid.Column="0" Grid.Row="1"/>
-                    <local:Viewer2D x:Name="viewer4" Grid.Column="1" Grid.Row="1"/>
+                    <local:Viewer2D x:Name="Viewer2D" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Grid.RowSpan="2" Background="Black"/>
+                
                 </Grid>
             </DockPanel>
             

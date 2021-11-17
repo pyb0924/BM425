@@ -1,8 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon />
+    <OutputType>Exe</OutputType>
+    <StartupObject>ViewerSCU.TestViewerSCU</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
