@@ -1,0 +1,3 @@
+[submodule "MyPACS"]
+	path = MyPACS
+	url = https://github.com/pyb0924/MyPACS
