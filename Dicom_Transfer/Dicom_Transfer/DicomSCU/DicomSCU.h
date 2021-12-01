@@ -9,7 +9,7 @@ constexpr auto OFFIS_CONSOLE_APPLICATION = "testscu";
 constexpr auto APPLICATIONTITLE = "SCU";
 constexpr auto PEERHOSTNAME = "localhost";
 constexpr auto PEERPORT = 104;
-constexpr auto PEERAPPLICATIONTITLE = "STORESCP";
+constexpr auto PEERAPPLICATIONTITLE = "MyPACSServer";
 constexpr auto STORESCPPORT = 104;
 
 Uint8 FindPresentationContext(const OFString& sopClass, DcmSCU& scu);
