@@ -1,10 +1,3 @@
-<!--
- * @Author: pyb0924
- * @Date: 2021-10-06 13:20:27
- * @LastEditTime: 2021-10-06 13:21:32
- * @Description: desc
- * @FilePath: \BM425\README.md
--->
 # BM425 生物医学工程课程设计（影像方向）
 
 ## [DIBTest](./DIBTest)
@@ -23,3 +16,8 @@
 - [DicomDB](./Dicom_Transfer/Dicom_Transfer/DicomDB)：将DICOM图像数据的Patient、Study、Image索引信息进入数据库管理。其中数据库部分使用本地的MySQL服务，Connector采用了[MySQL X DevAPI](https://dev.mysql.com/doc/x-devapi-userguide/en/)。
 - [DicomJPEG](./Dicom_Transfer/Dicom_Transfer/DicomJPEG)：对DICOM图像的像素矩阵进行压缩，使用DCMTK自带的dcmjpeg模块实现。
 - [DicomTransform](./Dicom_Transfer/Dicom_Transfer/DicomTransform)：一个对DICOM图像像素矩阵的几何变换实现，实现了图像的翻转（水平、竖直）和90度旋转（顺时针、逆时针）。
+
+### [MyPACS]([pyb0924/MyPACS: MyPACS (github.com)](https://github.com/pyb0924/MyPACS))
+
+一个基于DICOM标准的，可用于数据标注可视化的PACS系统，详细内容见[pyb0924/MyPACS](https://github.com/pyb0924/MyPACS)
+
